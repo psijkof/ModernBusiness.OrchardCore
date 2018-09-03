@@ -13,7 +13,6 @@
     "defaultContentItemId": "[js: uuid()]"
   },
 
-
   "steps": [
     {
       "name": "Feature",
@@ -65,6 +64,18 @@
       "name": "Themes",
       "Site": "ModernBusiness",
       "Admin": "TheAdmin"
+    },
+    {
+      "name": "settings",
+      "HomeRoute": {
+        "Action": "Display",
+        "Controller": "Item",
+        "Area": "OrchardCore.Contents",
+        "ContentItemId": "[js: uuid()]"
+      },
+      "LayerSetings": {
+        "Zones": [ "Header" ] 
+      }
     },
     {
       "name": "ContentDefinition",
@@ -942,18 +953,33 @@
       ]
     },
     {
-      "name": "settings",
-      "HomeRoute": {
-        "Action": "Display",
-        "Controller": "Item",
-        "Area": "OrchardCore.Contents",
-        "ContentItemId": "[js: variables('defaultContentItemId')]"
-      },
-      "LayerSettings": {
-        "Zones": [ "Content" ]
-      }
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": "true",
+          "Description": "The widgets in this layer are displayed on any page of this site."
+        },
+        {
+          "Name": "Homepage",
+          "Rule": "isHomepage()",
+          "Description": "The widgets in this layer are only displayed on the homepage."
+        }
+      ]
     },
-
+    {
+      "name": "media",
+      "Files": [
+        {
+          "Path": "6087de0a-f453-495d-882f-9b3396d400a9.jpg",
+          "Base64": "[file:base64('../wwwroot/img/6087de0a-f453-495d-882f-9b3396d400a9.jpg')]"
+        },
+        {
+          "Path": "b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg",
+          "Base64": "[file:base64('../wwwroot/img/b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg')]"
+        }
+      ]
+    },
     {
       "name": "content",
       "data": [
