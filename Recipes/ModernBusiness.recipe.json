@@ -620,7 +620,7 @@
           "Name": "Slide",
           "DisplayName": "Slide",
           "Settings": {
-            "Creatable": "True",
+            "Creatable": "False",
             "Draftable": "True",
             "Versionable": "True",
             "Listable": "True",

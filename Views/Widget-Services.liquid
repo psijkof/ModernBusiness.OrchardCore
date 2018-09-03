@@ -1,0 +1,21 @@
+﻿{% assign services = Model.ContentItem.Content.BagPart.ContentItems %}
+
+<h1 class="my-4">{{ Model.ContentItem.Content.TitlePart.Title }}</h1>
+
+<div class="row">
+
+    {% for item in services %}
+    <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+            <h4 class="card-header">{{ item.TitlePart.Title }}</h4>
+            <div class="card-body">
+                <p class="card-text">{{ item.HtmlBodyPart.Html | raw }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ item.Service.Link.Url }}" class="btn btn-primary">{{ item.Service.Link.Text }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
