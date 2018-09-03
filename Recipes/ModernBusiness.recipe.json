@@ -3,11 +3,11 @@
   "displayName": "Modern Business",
   "description": "Theme for any type of modern company business",
   "author": "Marcos Aidos and Sijmen Koffeman",
-  "website": "",
-  "version": "1.0.0-beta3",
+  "website": "https://github.com/psijkof/ModernBusiness.OrchardCore",
+  "version": "2.0",
   "issetuprecipe": true,
-  "categories": [ "Default" ],
-  "tags": [ "Business" ],
+  "categories": [ "default" ],
+  "tags": [ "business" ],
 
   "variables": {
     "defaultContentItemId": "[js: uuid()]"
@@ -15,53 +15,57 @@
 
   "steps": [
     {
-      "name": "Feature",
+      "name": "feature",
       "disable": [],
       "enable": [
-        "OrchardCore.Settings",
+        // SaaS
+        "OrchardCore.HomeRoute",
         "OrchardCore.Admin",
-        "OrchardCore.Liquid",
-        "OrchardCore.Contents",
-        "OrchardCore.ContentTypes",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Features",
+        "OrchardCore.Navigation",
+        "OrchardCore.Recipes",
+        "OrchardCore.Resources",
+        "OrchardCore.Roles",
+        "OrchardCore.Settings",
+        "OrchardCore.Themes",
+        "OrchardCore.Users",
+
+        // Content Management
         "OrchardCore.Alias",
         "OrchardCore.Autoroute",
+        "OrchardCore.Html",
         "OrchardCore.ContentFields",
         "OrchardCore.ContentPreview",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
         "OrchardCore.CustomSettings",
         "OrchardCore.Deployment",
         "OrchardCore.Deployment.Remote",
-        "OrchardCore.Diagnostics",
-        "OrchardCore.DynamicCache",
-        "OrchardCore.Resources",
-        "OrchardCore.Features",
         "OrchardCore.Feeds",
-        "OrchardCore.Widgets",
         "OrchardCore.Flows",
-        "OrchardCore.HomeRoute",
-        "OrchardCore.Html",
         "OrchardCore.Indexing",
-        "OrchardCore.Scripting",
         "OrchardCore.Layers",
-        "OrchardCore.Lists",
         "OrchardCore.Lucene",
+        "OrchardCore.Lists",
+        "OrchardCore.Liquid",
         "OrchardCore.Markdown",
-        "OrchardCore.Title",
         "OrchardCore.Media",
         "OrchardCore.Menu",
-        "OrchardCore.Navigation",
-        "OrchardCore.Roles",
-        "OrchardCore.Users",
         "OrchardCore.Queries",
-        "OrchardCore.Recipes",
+        "OrchardCore.Title",
         "OrchardCore.Templates",
-        "OrchardCore.Themes",
+        "OrchardCore.Widgets",
+
+        // Themes
         "ModernBusiness",
         "SafeMode",
         "TheAdmin"
       ]
     },
     {
-      "name": "Themes",
+      "name": "themes",
       "Site": "ModernBusiness",
       "Admin": "TheAdmin"
     },
@@ -73,7 +77,7 @@
         "Area": "OrchardCore.Contents",
         "ContentItemId": "[js: uuid()]"
       },
-      "LayerSetings": {
+      "LayerSettings": {
         "Zones": [ "Header", "Content", "Footer" ]
       }
     },
@@ -1040,7 +1044,7 @@
       ]
     },
     {
-      "name": "Layers",
+      "name": "layers",
       "Layers": [
         {
           "Name": "Always",
