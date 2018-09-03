@@ -74,7 +74,7 @@
         "ContentItemId": "[js: uuid()]"
       },
       "LayerSetings": {
-        "Zones": [ "Header" ] 
+        "Zones": [ "Header", "Content", "Footer" ] 
       }
     },
     {
@@ -977,6 +977,10 @@
         {
           "Path": "b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg",
           "Base64": "[file:base64('../wwwroot/img/b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg')]"
+        },
+        {
+          "Path": "modern.jpg",
+          "Base64": "[file:base64('../wwwroot/img/modern.jpg')]"
         }
       ]
     },
@@ -1042,16 +1046,16 @@
                 "Author": "admin",
                 "Slide": {
                   "Description": {
-                    "Text": "Working dog"
+                    "Text": "Business"
                   },
                   "Image": {
                     "Paths": [
-                      "6087de0a-f453-495d-882f-9b3396d400a9.jpg"
+                      "modern.jpg"
                     ]
                   }
                 },
                 "TitlePart": {
-                  "Title": "Look at this working dog!"
+                  "Title": "Look it works!"
                 },
                 "LayerMetadata": {
                   "Position": 1.0,
@@ -1064,7 +1068,7 @@
           "LayerMetadata": {
             "Position": 1.0,
             "Zone": "Header",
-            "Layer": "Always"
+            "Layer": "Homepage"
           }
         }
       ]
