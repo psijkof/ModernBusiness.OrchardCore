@@ -16,6 +16,7 @@
   "steps": [
     {
       "name": "Feature",
+      "disable": [],
       "enable": [
         "OrchardCore.Settings",
         "OrchardCore.Admin",
@@ -57,8 +58,7 @@
         "ModernBusiness",
         "SafeMode",
         "TheAdmin"
-      ],
-      "disable": []
+      ]
     },
     {
       "name": "Themes",
@@ -74,7 +74,7 @@
         "ContentItemId": "[js: uuid()]"
       },
       "LayerSetings": {
-        "Zones": [ "Header", "Content", "Footer" ] 
+        "Zones": [ "Header", "Content", "Footer" ]
       }
     },
     {
@@ -953,66 +953,25 @@
       ]
     },
     {
-      "name": "Layers",
-      "Layers": [
-        {
-          "Name": "Always",
-          "Rule": "true",
-          "Description": "The widgets in this layer are displayed on any page of this site."
-        },
-        {
-          "Name": "Homepage",
-          "Rule": "isHomepage()",
-          "Description": "The widgets in this layer are only displayed on the homepage."
-        }
-      ]
-    },
-    {
-      "name": "media",
-      "Files": [
-        {
-          "Path": "6087de0a-f453-495d-882f-9b3396d400a9.jpg",
-          "Base64": "[file:base64('../wwwroot/img/6087de0a-f453-495d-882f-9b3396d400a9.jpg')]"
-        },
-        {
-          "Path": "b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg",
-          "Base64": "[file:base64('../wwwroot/img/b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg')]"
-        },
-        {
-          "Path": "modern.jpg",
-          "Base64": "[file:base64('../wwwroot/img/modern.jpg')]"
-        }
-      ]
+      // Create the indices before the content items so they are indexed automatically.
+      "name": "lucene-index",
+      "Indices": [ "Search" ]
     },
     {
       "name": "content",
       "data": [
         {
-          "ContentItemId": "4k12ryg05x05hs4m4xqhaxt7d8",
-          "ContentItemVersionId": "4hwgpk9g8dqa1yhz0w571c47wb",
+          "ContentItemId": "[js: uuid()]",
           "ContentType": "Carousel",
           "Latest": true,
           "Published": true,
-          "ModifiedUtc": "2018-08-31T15:44:41.5321598Z",
-          "PublishedUtc": "2018-08-31T15:44:41.5355409Z",
-          "CreatedUtc": "2018-08-31T15:44:41.5355409Z",
-          "Owner": "admin",
-          "Author": "admin",
           "Carousel": {},
           "BagPart": {
             "ContentItems": [
               {
                 "Id": 0,
-                "ContentItemId": "4j5jx5dhgb6eaz32ncqb484xdz",
-                "ContentItemVersionId": null,
+                "ContentItemId": "[js: uuid()]",
                 "ContentType": "Slide",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2018-08-31T15:44:41.5259778Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
                 "Slide": {
                   "Description": {
                     "Text": "Moon"
@@ -1034,16 +993,8 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4bfjzzna0wfjsrb7gxh3y6yn5m",
-                "ContentItemVersionId": null,
+                "ContentItemId": "[js: uuid()]",
                 "ContentType": "Slide",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2018-08-31T15:44:41.5283892Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
                 "Slide": {
                   "Description": {
                     "Text": "Business"
@@ -1072,16 +1023,8 @@
           }
         },
         {
-          "ContentItemId": "4gcmzaccgb5k23hs2ea4qcrkdm",
-          "ContentItemVersionId": "4vqb0zjy7g8wvtbtsrgbzt5qwe",
+          "ContentItemId": "[js: variables('defaultContentItemId')]",
           "ContentType": "Page",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2018-09-03T15:44:53.1668592Z",
-          "PublishedUtc": "2018-09-03T15:44:53.1787766Z",
-          "CreatedUtc": "2018-09-03T15:44:53.1787766Z",
-          "Owner": "admin",
-          "Author": "admin",
           "Page": {},
           "AutoroutePart": {
             "Path": "index",
@@ -1093,6 +1036,38 @@
           "TitlePart": {
             "Title": "Homepage"
           }
+        }
+      ]
+    },
+    {
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": "true",
+          "Description": "The widgets in this layer are displayed on any page of this site."
+        },
+        {
+          "Name": "Homepage",
+          "Rule": "isHomepage()",
+          "Description": "The widgets in this layer are only displayed on the homepage."
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "Path": "6087de0a-f453-495d-882f-9b3396d400a9.jpg",
+          "Base64": "[file:base64('../wwwroot/img/6087de0a-f453-495d-882f-9b3396d400a9.jpg')]"
+        },
+        {
+          "Path": "b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg",
+          "Base64": "[file:base64('../wwwroot/img/b0e9f9c8-eaa3-4f44-a87b-a49edc06837d.jpg')]"
+        },
+        {
+          "Path": "modern.jpg",
+          "Base64": "[file:base64('../wwwroot/img/modern.jpg')]"
         }
       ]
     }
