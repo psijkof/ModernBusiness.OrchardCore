@@ -1,0 +1,20 @@
+﻿{% assign projects = Model.ContentItem.Content.BagPart.ContentItems %}
+
+<div class="col-12">
+    <h2>{{ Model.ContentItem.Content.TitlePart.Title }}</h2>
+</div>
+
+{% for item in projects %}
+<div class="col-lg-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="{{ item.Project.Image.Paths | asset_url }}" alt=""></a>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a href="#">{{ item.TitlePart.Title }}</a>
+            </h4>
+            <p class="card-text">{{ item.HtmlBodyPart.Html | raw }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
