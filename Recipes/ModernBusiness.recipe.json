@@ -678,6 +678,174 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Service",
+          "DisplayName": "Service",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Service",
+              "Name": "Service",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "2"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Services",
+          "DisplayName": "Services",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Services",
+              "Name": "Services",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "Position": "1",
+                "DisplayName": "Bag",
+                "Description": "Provides a collection behavior for your content item.",
+                "ContainedContentTypes": [
+                  "Service"
+                ],
+                "DisplayType": null,
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "3"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Portfolio",
+          "DisplayName": "Portfolio",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Portfolio",
+              "Name": "Portfolio",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "Position": "1",
+                "DisplayName": "Bag",
+                "Description": "Provides a collection behavior for your content item.",
+                "ContainedContentTypes": [
+                  "Project"
+                ],
+                "DisplayType": null,
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "3"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Project",
+          "DisplayName": "Project",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "False",
+            "Versionable": "False",
+            "Listable": "True",
+            "Securable": "False",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Project",
+              "Name": "Project",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "2"
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -953,6 +1121,124 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Service",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "DisplayName": "Link",
+                "Editor": null,
+                "Hint": null,
+                "HintLinkText": null,
+                "Required": false,
+                "LinkTextMode": 0,
+                "UrlPlaceholder": null,
+                "TextPlaceholder": null,
+                "DefaultUrl": null,
+                "DefaultText": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "0"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Project",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "DisplayName": "Image",
+                "Editor": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Hint": null,
+                "Required": false,
+                "Multiple": false,
+                "Position": "0"
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "DisplayName": "Subtitle",
+                "Editor": null,
+                "Hint": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "2"
+              }
+            },
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "DisplayName": "Link",
+                "Editor": null,
+                "Hint": null,
+                "HintLinkText": null,
+                "Required": false,
+                "LinkTextMode": 0,
+                "UrlPlaceholder": null,
+                "TextPlaceholder": null,
+                "DefaultUrl": null,
+                "DefaultText": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Queries",
+      "Queries": [
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Service\" } \r\n  },\r\n  \"sort\": { \"Content.ContentItem.CreatedUtc\": { \"order\": \"desc\" } },\r\n  \"size\": 3\r\n}",
+          "ReturnContentItems": true,
+          "Name": "LatestServices",
+          "Source": "Lucene"
+        },
+        {
+          "Template": "select * from ContentItemIndex where ContentType = 'Service'",
+          "ReturnDocuments": true,
+          "Name": "ServiceQuery",
+          "Source": "Sql"
         }
       ]
     },
@@ -964,6 +1250,325 @@
     {
       "name": "content",
       "data": [
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
+          "ContentType": "Portfolio",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-04T16:23:01.8141153Z",
+          "PublishedUtc": "2018-09-04T16:23:01.850052Z",
+          "CreatedUtc": "2018-09-04T16:17:45.9569065Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Portfolio": {},
+          "BagPart": {
+            "ContentItems": [
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.8148799Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+                },
+                "TitlePart": {
+                  "Title": "Project One"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.817555Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae."
+                },
+                "TitlePart": {
+                  "Title": "Project Two "
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.8225662Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!"
+                },
+                "TitlePart": {
+                  "Title": "Project Three"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.8290383Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!"
+                },
+                "TitlePart": {
+                  "Title": "Project Four"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.8321833Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+                },
+                "TitlePart": {
+                  "Title": "Project Five"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:01.8348365Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "700x400.jpeg.png"
+                    ]
+                  },
+                  "Subtitle": {
+                    "Text": null
+                  },
+                  "Link": {
+                    "Url": null,
+                    "Text": null
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+                },
+                "TitlePart": {
+                  "Title": "Project Six"
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Porfolio Heading"
+          },
+          "AliasPart": {
+            "Alias": "portfolio"
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
+          "ContentType": "Services",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-04T16:23:09.0849078Z",
+          "PublishedUtc": "2018-09-04T16:23:09.0943251Z",
+          "CreatedUtc": "2018-09-04T16:15:21.5211863Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Services": {},
+          "BagPart": {
+            "ContentItems": [
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:09.0858903Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Service": {
+                  "Link": {
+                    "Url": null,
+                    "Text": "Learn More"
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Description of this service."
+                },
+                "TitlePart": {
+                  "Title": "Some Service"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:09.0881669Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Service": {
+                  "Link": {
+                    "Url": null,
+                    "Text": "Learn More"
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Another service we offer"
+                },
+                "TitlePart": {
+                  "Title": "Another"
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T16:23:09.0898012Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Service": {
+                  "Link": {
+                    "Url": null,
+                    "Text": "Leran More"
+                  }
+                },
+                "HtmlBodyPart": {
+                  "Html": "Lorem ipsum"
+                },
+                "TitlePart": {
+                  "Title": "One more"
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Welcome to Modern Business"
+          },
+          "AliasPart": {
+            "Alias": "services"
+          }
+        },
         {
           "ContentItemId": "[js: uuid()]",
           "ContentType": "Carousel",
@@ -1027,15 +1632,115 @@
           }
         },
         {
-          "ContentItemId": "[js: variables('defaultContentItemId')]",
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
           "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-04T17:20:27.6692441Z",
+          "PublishedUtc": "2018-09-04T17:20:27.6849265Z",
+          "CreatedUtc": "2018-09-03T16:31:48.215308Z",
+          "Owner": null,
+          "Author": "admin",
           "Page": {},
           "AutoroutePart": {
             "Path": "index",
             "SetHomepage": true
           },
           "FlowPart": {
-            "Widgets": []
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.6766008Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "<!--{% assign services = Content[\"alias:services\"].ContentItem.Content %}-->\r\n{% assign services = Queries.ServiceQuery | query %}\r\n\r\n{{ services.document }}\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <h1 class=\"my-4\">{{ services.TitlePart.Title }}</h1>\r\n    </div>\r\n\r\n    {% for item in services.BagPart.ContentItems %}\r\n    <div class=\"col-lg-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <h4 class=\"card-header\">{{ item.TitlePart.Title }}</h4>\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text\">{{ item.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                <a href=\"{{ item.Service.Link.Url }}\" class=\"btn btn-primary\">{{ item.Service.Link.Text }}</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n  <div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.6776729Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": "<h2>Modern Business Features</h2>\r\n                <p>The Modern Business template by Start Bootstrap includes:</p>\r\n                <ul>\r\n                    <li>\r\n                        <strong>Bootstrap v4</strong>\r\n                    </li>\r\n                    <li>jQuery</li>\r\n                    <li>Font Awesome</li>\r\n                    <li>Working contact form with validation</li>\r\n                    <li>Unstyled page elements for easy customization</li>\r\n                </ul>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 0,
+                  "Size": 50
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "ImageWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.6793315Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Image": {
+                  "Media": {
+                    "Paths": [
+                      "700x450.png"
+                    ]
+                  },
+                  "Caption": {
+                    "Text": null
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 2,
+                  "Size": 50
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.682725Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": " <hr>\r\n <!-- Call to Action Section -->\r\n        <div class=\"row mb-4\">\r\n            <div class=\"col-md-8\">\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <a class=\"btn btn-lg btn-secondary btn-block\" href=\"#\">Call to Action</a>\r\n            </div>\r\n        </div>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
           },
           "TitlePart": {
             "Title": "Homepage"
@@ -1072,6 +1777,14 @@
         {
           "Path": "modern.jpg",
           "Base64": "[file:base64('../wwwroot/img/modern.jpg')]"
+        },
+        {
+          "Path": "700x450.png",
+          "Base64": "[file:base64('../wwwroot/img/700x450.png')]"
+        },
+        {
+          "Path": "700x400.png",
+          "Base64": "[file:base64('../wwwroot/img/700x400.png')]"
         }
       ]
     }
