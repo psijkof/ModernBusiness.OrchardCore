@@ -1,7 +1,6 @@
 ﻿{% assign link = Model.ContentItem.Content.LinkMenuItemPart %}
 {% assign dropLink = Model.ContentItem.Content.MenuItemsListPart.MenuItems %}
 
-
 {% if dropLink.size > 0 %}
     <a class="nav-link dropdown-toggle" href="{{ link.Url | href }}" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{ link.Name }}
@@ -12,5 +11,5 @@
         {% endfor %}
     </div>
 {% else %}
-<a href="{{ link.Url | href }}" class="nav-link">{{ link.Name }}</a>
+    <a href="{{ link.Url | href }}" class="nav-link">{{ link.Name }}</a>
 {% endif %}
