@@ -1256,14 +1256,11 @@
       "name": "content",
       "data": [
         {
-          "ContentItemId": "43wd94r2acacby54j3kekwfjma",
-          "ContentItemVersionId": "4xaj24hhn1qj6v858javvavmcd",
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
           "ContentType": "Menu",
           "Latest": true,
           "Published": true,
-          "ModifiedUtc": "2018-09-06T10:39:20.1212042Z",
-          "PublishedUtc": "2018-09-06T10:39:20.3497177Z",
-          "CreatedUtc": "2018-09-06T09:05:22.1156236Z",
           "Owner": "admin",
           "Author": "admin",
           "TitlePart": {
@@ -1277,12 +1274,11 @@
             "MenuItems": [
               {
                 "Id": 0,
-                "ContentItemId": "41ysnhhf93dx7wkern999gj8wm",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:05:52.9476662Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": null,
@@ -1294,14 +1290,11 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4vk8vtja7tea2rva5fc72tcfxq",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:06:13.4100192Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
                 "Owner": null,
                 "Author": "admin",
                 "LinkMenuItemPart": {
@@ -1311,14 +1304,11 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4s2qq6dk2drcz2pwmf2g5kacm0",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:06:23.1126528Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
                 "Owner": null,
                 "Author": "admin",
                 "LinkMenuItemPart": {
@@ -1328,15 +1318,11 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "46wwm3x857dd1467f7sk7kbtx8",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:06:52.3701664Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Portfolio",
@@ -1346,15 +1332,11 @@
                   "MenuItems": [
                     {
                       "Id": 0,
-                      "ContentItemId": "46w1j25f4qfz5zf85efpchf24j",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:07:34.8774043Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "1 Column Portfolio",
@@ -1363,15 +1345,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4kx1y9v64py0s0dnx1rd1ff9w8",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:07:51.1114753Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "2 Column Portfolio",
@@ -1380,15 +1358,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4rtqq344yb6rktv4qms2fjy8d3",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:08:14.5191215Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "3 Column Portfolio",
@@ -1397,15 +1371,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4ja5vvsxv6h5n43v6ctngq0vws",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:08:22.5392758Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "4 Column Portfolio",
@@ -1414,15 +1384,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "497bhf4qsfpvm230h9gr0cgawt",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:08:38.2400364Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Single Portfolio Item",
@@ -1434,15 +1400,11 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4ws0hgr8cxkz2v76php6hpctxr",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:07:11.4374532Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Blog",
@@ -1452,15 +1414,11 @@
                   "MenuItems": [
                     {
                       "Id": 0,
-                      "ContentItemId": "48wny9erf626wxtrbf4hpxx24z",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:08:50.6361948Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Blog Home 1",
@@ -1469,15 +1427,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4nevtfyaatqg85b87f30h3f4d3",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:09:01.1191589Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Blog Home 2",
@@ -1486,15 +1440,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4sf1db5qj2xfgvkm7m3whpygx7",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T09:09:10.7239933Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Blog Post",
@@ -1506,15 +1456,11 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4feb19y168g69tc9b9f3qh6w5s",
+                "ContentItemId": "[js: uuid()]",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-06T09:07:20.3359313Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Other Pages",
@@ -1524,15 +1470,11 @@
                   "MenuItems": [
                     {
                       "Id": 0,
-                      "ContentItemId": "4ake5wy8emfk7yt36g7q27mans",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T10:04:47.1718609Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Full Width Page",
@@ -1541,15 +1483,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4p6n305kgjezb5mzmsp4g17hdg",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T10:04:58.9756171Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Sidebar Page",
@@ -1558,15 +1496,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4scmb557caexn3gt32nww1g0wd",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T10:05:09.4761454Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "FAQ",
@@ -1575,15 +1509,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4j1kvm5a2f0hyzbtqh59k47tnb",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T10:05:20.468595Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "404",
@@ -1592,15 +1522,11 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "4vvevagd7zhmp1sja9af0myknb",
+                      "ContentItemId": "[js: uuid()]",
                       "ContentItemVersionId": null,
                       "ContentType": "LinkMenuItem",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-06T10:05:31.195161Z",
-                      "PublishedUtc": null,
-                      "CreatedUtc": null,
-                      "Owner": null,
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Princing Table",
@@ -2158,6 +2084,27 @@
           },
           "TitlePart": {
             "Title": "Homepage"
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "4cbv2rk3tjyg26ndn5jzt9y0wv",
+          "ContentType": "RawHtml",
+          "Latest": true,
+          "Published": true,
+          "Owner": "admin",
+          "Author": "admin",
+          "RawHtml": {
+            "Content": {
+              "Html": "[file:text('Snippets/Footer.html')]"
+            }
+          },
+          "LayerMetadata": {
+            "Title": "Footer",
+            "Position": 1.0,
+            "Zone": "Footer",
+            "Layer": "Always",
+            "RenderTitle": false
           }
         }
       ]
