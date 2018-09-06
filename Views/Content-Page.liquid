@@ -1,0 +1,21 @@
+﻿{% if Model.ContentItem.Content.AutoroutePart.SetHomepage == false %}
+    {% zone "Header" %}
+        <div class="container">
+
+            <h1 class="mt-4 mb-3">
+                {{ Model.ContentItem.Content.TitlePart.Title }}
+                <small>{{ Model.ContentItem.Content.Page.Subtitle.Text }}</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ "/" | href }}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">{{ Model.ContentItem.Content.AutoroutePart.Path | capitalize }}</li>
+            </ol>
+        </div>
+    {% endzone %}
+{% endif %}
+
+{% shape_remove_item Model.Content "Page-Subtitle" %}
+{{ Model.Content | shape_render }}
