@@ -32,20 +32,19 @@
 
     {% shape "menu", alias: "alias:main-menu" %}
 
+    <!-- Header -->
     <header>
         {% render_section "Header", required: false %}
     </header>
 
+    <!-- Main Body -->
     <div class="container">
-
         {% render_section "Content" %}
-
     </div>
 
+    <!-- Footer -->
     <footer class="py-5 bg-dark">
-
         {% render_section "Footer", required: false %}
-
     </footer>
 
     <!-- Bootstrap core JavaScript -->

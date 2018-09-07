@@ -1244,6 +1244,13 @@
           "ReturnContentItems": true,
           "Name": "PortfolioSummaryQuery",
           "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Project\" } \r\n  },\r\n  \"sort\":[ { \"Content.ContentItem.PublishedUtc\": { \"order\": \"desc\" } } ]\r\n}",
+          "ReturnContentItems": true,
+          "Name": "PortfolioQuery",
+          "Source": "Lucene"
         }
       ]
     },
@@ -1340,7 +1347,7 @@
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "1 Column Portfolio",
-                        "Url": null
+                        "Url": "portfolio1"
                       }
                     },
                     {
@@ -1568,7 +1575,7 @@
           "Published": false,
           "ModifiedUtc": "2018-09-04T16:23:01.8148799Z",
           "PublishedUtc": null,
-          "CreatedUtc": null,
+          "CreatedUtc": "2018-09-01T16:23:01.850052Z",
           "Owner": null,
           "Author": "admin",
           "Project": {
@@ -1602,6 +1609,7 @@
           "ContentType": "Project",
           "Latest": false,
           "Published": true,
+          "CreatedUtc": "2018-09-02T16:23:01.850052Z",
           "Project": {
             "Image": {
               "Paths": [
@@ -1633,6 +1641,7 @@
           "ContentType": "Project",
           "Latest": false,
           "Published": true,
+          "CreatedUtc": "2018-09-03T16:23:01.850052Z",
           "Author": "admin",
           "Project": {
             "Image": {
@@ -1665,6 +1674,7 @@
           "ContentType": "Project",
           "Latest": true,
           "Published": true,
+          "CreatedUtc": "2018-09-04T16:23:01.850052Z",
           "Author": "admin",
           "Project": {
             "Image": {
@@ -1697,6 +1707,7 @@
           "ContentType": "Project",
           "Latest": true,
           "Published": true,
+          "CreatedUtc": "2018-09-05T16:23:01.850052Z",
           "Author": "admin",
           "Project": {
             "Image": {
@@ -1729,6 +1740,7 @@
           "ContentType": "Project",
           "Latest": true,
           "Published": true,
+          "CreatedUtc": "2018-09-06T16:23:01.850052Z",
           "Author": "admin",
           "Project": {
             "Image": {
@@ -2084,6 +2096,54 @@
           },
           "TitlePart": {
             "Title": "Homepage"
+          }
+        },
+        {
+          "ContentItemId": "4aez1zvje0ap127czq6860nfmw",
+          "ContentItemVersionId": "49k9smkdkh1e043w1kdk8ap64j",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-07T09:49:22.8620224Z",
+          "PublishedUtc": "2018-09-07T09:49:22.8707095Z",
+          "CreatedUtc": "2018-09-06T13:43:42.8680747Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": "Subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio1",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4r65bvfh421yc55pgv51mvdxnf",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-07T09:49:22.8675579Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"].Content %}\r\n{% assign projects = Queries.PortfolioQuery | query %}\r\n\r\n{% for item in projects %}\r\n<div class=\"row\">\r\n     <div class=\"col-md-7\">\r\n        <a href=\"#\">\r\n          \t<img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"http://placehold.it/700x300\" alt=\"\">\r\n        </a>\r\n     </div>\r\n     <div class=\"col-md-5\">\r\n         <h3>{{ item.Content.TitlePart.Title }}</h3>\r\n         <p>{{ item.Content.HtmlBodyPart.Html }}</p>\r\n         <a class=\"btn btn-primary\" href=\"#\">View Project\r\n           \t<span class=\"glyphicon glyphicon-chevron-right\"></span>\r\n         </a>\r\n    </div>\r\n</div>\r\n{% if item != projects.last %}\r\n\t<hr>\r\n  {% endif %}\r\n\r\n{% endfor %}\r\n"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Portfolio1"
           }
         },
         {
