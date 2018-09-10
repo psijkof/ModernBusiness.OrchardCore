@@ -850,6 +850,163 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Team",
+          "DisplayName": "Team",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Team",
+              "Name": "Team",
+              "Settings": {
+                "Position": "3"
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "Position": "2",
+                "PageSize": "10",
+                "ContainedContentTypes": [
+                  "TeamMember"
+                ],
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "1"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "TeamMember",
+          "DisplayName": "TeamMember",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "False",
+            "Versionable": "False",
+            "Listable": "False",
+            "Securable": "False",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TeamMember",
+              "Name": "TeamMember",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Customers",
+          "DisplayName": "Customers",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Customers",
+              "Name": "Customers",
+              "Settings": {
+                "Position": "3"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "Position": "2",
+                "PageSize": "10",
+                "ContainedContentTypes": [
+                  "Customer"
+                ],
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Customer",
+          "DisplayName": "Customer",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "False",
+            "Versionable": "False",
+            "Listable": "False",
+            "Securable": "False",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Customer",
+              "Name": "Customer",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -1229,6 +1386,94 @@
       ]
     },
     {
+      "Name": "TeamMember",
+      "Settings": {},
+      "ContentPartFieldDefinitionRecords": [
+        {
+          "FieldName": "TextField",
+          "Name": "Position",
+          "Settings": {
+            "DisplayName": "Position",
+            "Editor": null,
+            "Hint": null,
+            "ContentIndexSettings": {
+              "Included": false,
+              "Stored": false,
+              "Analyzed": false,
+              "Sanitized": false,
+              "Tokenized": false,
+              "Template": null
+            },
+            "Position": "1"
+          }
+        },
+        {
+          "FieldName": "TextField",
+          "Name": "Email",
+          "Settings": {
+            "DisplayName": "Email",
+            "Editor": null,
+            "Hint": null,
+            "ContentIndexSettings": {
+              "Included": false,
+              "Stored": false,
+              "Analyzed": false,
+              "Sanitized": false,
+              "Tokenized": false,
+              "Template": null
+            },
+            "Position": "2"
+          }
+        },
+        {
+          "FieldName": "MediaField",
+          "Name": "Photo",
+          "Settings": {
+            "DisplayName": "Photo",
+            "Editor": null,
+            "ContentIndexSettings": {
+              "Included": false,
+              "Stored": false,
+              "Analyzed": false,
+              "Sanitized": false,
+              "Tokenized": false,
+              "Template": null
+            },
+            "Hint": null,
+            "Required": false,
+            "Multiple": false,
+            "Position": "0"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Customer",
+      "Settings": {},
+      "ContentPartFieldDefinitionRecords": [
+        {
+          "FieldName": "MediaField",
+          "Name": "Logo",
+          "Settings": {
+            "DisplayName": "Logo",
+            "Editor": null,
+            "ContentIndexSettings": {
+              "Included": false,
+              "Stored": false,
+              "Analyzed": false,
+              "Sanitized": false,
+              "Tokenized": false,
+              "Template": null
+            },
+            "Hint": null,
+            "Required": false,
+            "Multiple": false,
+            "Position": "0"
+          }
+        }
+      ]
+    },
+    {
       "name": "Queries",
       "Queries": [
         {
@@ -1240,16 +1485,30 @@
         },
         {
           "Index": "Search",
-          "Template": "[file:text('Snippets/PortfolioQuery.txt')]",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Project\" } \r\n  },\r\n  \"sort\": { \"Content.ContentItem.CreatedUtc\": { \"order\": \"desc\" } },\r\n  \"size\": 6\r\n}",
           "ReturnContentItems": true,
           "Name": "PortfolioSummaryQuery",
           "Source": "Lucene"
         },
         {
           "Index": "Search",
-          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Project\" } \r\n  },\r\n  \"sort\":[ { \"Content.ContentItem.PublishedUtc\": { \"order\": \"desc\" } } ]\r\n}",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Project\" } \r\n  }\r\n}",
           "ReturnContentItems": true,
           "Name": "PortfolioQuery",
+          "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"TeamMember\" } \r\n  }\r\n}",
+          "ReturnContentItems": true,
+          "Name": "TeamQuery",
+          "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"Customer\" } \r\n  },\r\n  \"sort\": { \"Content.ContentItem.CreatedUtc\": { \"order\": \"asc\" } },\r\n}",
+          "ReturnContentItems": true,
+          "Name": "CustomersQuery",
           "Source": "Lucene"
         }
       ]
@@ -1292,7 +1551,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "About",
-                  "Url": "~/About"
+                  "Url": "about"
                 }
               },
               {
@@ -1306,7 +1565,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Services",
-                  "Url": "~/Services"
+                  "Url": "services"
                 }
               },
               {
@@ -1320,7 +1579,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Contact",
-                  "Url": "~/Contact"
+                  "Url": "contact"
                 }
               },
               {
@@ -1632,7 +1891,7 @@
           },
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
-            "Order": 0
+            "Order": 1
           }
         },
         {
@@ -1665,7 +1924,7 @@
           },
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
-            "Order": 0
+            "Order": 2
           }
         },
         {
@@ -1698,7 +1957,7 @@
           },
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
-            "Order": 0
+            "Order": 3
           }
         },
         {
@@ -1731,7 +1990,7 @@
           },
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
-            "Order": 0
+            "Order": 4
           }
         },
         {
@@ -1764,7 +2023,7 @@
           },
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
-            "Order": 0
+            "Order": 5
           }
         },
         {
@@ -2147,6 +2406,448 @@
           }
         },
         {
+          "ContentItemId": "42chwzdcjdteg5n18grf8g1nwd",
+          "ContentItemVersionId": "4d55vq15am4966wwjjndrzz1dm",
+          "ContentType": "TeamMember",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:11:31.3595342Z",
+          "PublishedUtc": "2018-09-10T10:11:31.3628998Z",
+          "CreatedUtc": "2018-09-10T10:11:31.3628998Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TeamMember": {
+            "Position": {
+              "Text": "Position"
+            },
+            "Email": {
+              "Text": "email@example.com"
+            },
+            "Photo": {
+              "Paths": [
+                "700x450.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit."
+          },
+          "TitlePart": {
+            "Title": "Team Member"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4nbabchxd4q3pzs2e8027sx6x4",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "45yycck3nac60xzfcp303jv0d3",
+          "ContentItemVersionId": "4y5adg9bqy88r6mp0v59y6w7dc",
+          "ContentType": "TeamMember",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:12:24.4558303Z",
+          "PublishedUtc": "2018-09-10T10:12:24.4577698Z",
+          "CreatedUtc": "2018-09-10T10:12:24.4577698Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TeamMember": {
+            "Position": {
+              "Text": "Position"
+            },
+            "Email": {
+              "Text": "name@example.com"
+            },
+            "Photo": {
+              "Paths": [
+                "700x450.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit."
+          },
+          "TitlePart": {
+            "Title": "Team Member 2"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4nbabchxd4q3pzs2e8027sx6x4",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4tgsszveajv7zw8c8s7te64gc8",
+          "ContentItemVersionId": "4vs6mk4rnga7mtkzj92x182bx7",
+          "ContentType": "TeamMember",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:12:55.889782Z",
+          "PublishedUtc": "2018-09-10T10:12:55.8918047Z",
+          "CreatedUtc": "2018-09-10T10:12:55.8918047Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TeamMember": {
+            "Position": {
+              "Text": "Position"
+            },
+            "Email": {
+              "Text": "name@example.com"
+            },
+            "Photo": {
+              "Paths": [
+                "700x450.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit."
+          },
+          "TitlePart": {
+            "Title": "Team Member"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4nbabchxd4q3pzs2e8027sx6x4",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+          "ContentItemVersionId": "42c1tqw93x5g85nrf8nfjg155v",
+          "ContentType": "Customers",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:13:17.8559885Z",
+          "PublishedUtc": "2018-09-10T10:13:17.8579794Z",
+          "CreatedUtc": "2018-09-10T10:13:17.8579794Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customers": {},
+          "AliasPart": {
+            "Alias": "customers"
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Our Customers"
+          }
+        },
+        {
+          "ContentItemId": "4gj7z1dcqypsnr1fnnnx0j7fmx",
+          "ContentItemVersionId": "4vz9egxf843e7s3t6nenwbexmy",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:14:34.2066904Z",
+          "PublishedUtc": "2018-09-10T10:14:34.2086471Z",
+          "CreatedUtc": "2018-09-10T10:14:34.2086471Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer One"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4jqn9g5teavrg2tbzh32cn42d2",
+          "ContentItemVersionId": "4640xkwazkvx50nxr9xav63emh",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:14:50.254898Z",
+          "PublishedUtc": "2018-09-10T10:14:50.2568511Z",
+          "CreatedUtc": "2018-09-10T10:14:50.2568511Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer Two"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4rmdnk7cg1t4bxzan3gadn9ydk",
+          "ContentItemVersionId": "48vnas3cw40rxywd33shga6wn9",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:15:04.0224225Z",
+          "PublishedUtc": "2018-09-10T10:15:04.0244693Z",
+          "CreatedUtc": "2018-09-10T10:15:04.0244693Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer Three"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4n3ag53mn2kaasjy7pbk3xaxm9",
+          "ContentItemVersionId": "4rxa2wv7x07fe2batkvh0rbede",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:15:15.0872294Z",
+          "PublishedUtc": "2018-09-10T10:15:15.0894015Z",
+          "CreatedUtc": "2018-09-10T10:15:15.0894015Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer Four"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "44cw9gp3y5ny06zg31hm06gemd",
+          "ContentItemVersionId": "4jbgtzwdqyhq551h5z0p58fsdt",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:15:26.823744Z",
+          "PublishedUtc": "2018-09-10T10:15:26.8256396Z",
+          "CreatedUtc": "2018-09-10T10:15:26.8256396Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer Five"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4d4n06hgb5r5t3ewkfymyyfgx1",
+          "ContentItemVersionId": "4v61z7x224nd5wqkbpbvhdxdcn",
+          "ContentType": "Customer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:15:37.6449151Z",
+          "PublishedUtc": "2018-09-10T10:15:37.6467648Z",
+          "CreatedUtc": "2018-09-10T10:15:37.6467648Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Customer": {
+            "Logo": {
+              "Paths": [
+                "500x300.png"
+              ]
+            }
+          },
+          "TitlePart": {
+            "Title": "Customer Six"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "41jndpyg7x6c03qvxn2hp3spc0",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4nbabchxd4q3pzs2e8027sx6x4",
+          "ContentItemVersionId": "4m2qwpnwb76ra5tx01vw007gmn",
+          "ContentType": "Team",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T10:16:51.6748971Z",
+          "PublishedUtc": "2018-09-10T10:16:51.6802006Z",
+          "CreatedUtc": "2018-09-10T10:09:48.7999198Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Team": {},
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Our Team"
+          },
+          "AliasPart": {
+            "Alias": "team"
+          }
+        },
+        {
+          "ContentItemId": "4w845p44nx4yeryf9rwf3wj94g",
+          "ContentItemVersionId": "4ava5em2vws1k6z3y936469t4b",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T11:06:42.6127312Z",
+          "PublishedUtc": "2018-09-10T11:06:42.6256989Z",
+          "CreatedUtc": "2018-09-10T10:17:05.7996088Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "about",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4b894xg6npzh0we12zmfrzxncg",
+                "ContentItemVersionId": null,
+                "ContentType": "Container",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T11:06:42.620554Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Container": {},
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "Id": 0,
+                      "ContentItemId": "479f7q1nmden803kd0ngbvd4mk",
+                      "ContentItemVersionId": null,
+                      "ContentType": "ImageWidget",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-10T11:06:42.621191Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "Image": {
+                        "Media": {
+                          "Paths": [
+                            "750x450.png"
+                          ]
+                        },
+                        "Caption": {
+                          "Text": null
+                        }
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 2,
+                        "Size": 50
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "49sx9yy1cjw54zkpn9xad0xn4e",
+                      "ContentItemVersionId": null,
+                      "ContentType": "RawHtml",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-10T11:06:42.6224896Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "RawHtml": {
+                        "Content": {
+                          "Html": "<div class=\"col-12\">\r\n<h2>About Modern Business</h2>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>\r\n</div>\r\n"
+                        }
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 50
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "445pazrpwjzrt0ywnx8w9s9c4d",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T11:06:42.6234436Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign teamParent = Content[\"alias:team\"].Content %}\r\n{% assign team = Queries.TeamQuery | query %}\r\n\r\n<h2>{{ teamParent.TitlePart.Title }}</h2>\r\n\r\n      <div class=\"row\">\r\n        {% for member in team %}\r\n        <div class=\"col-lg-4 mb-4\">\r\n          <div class=\"card h-100 text-center\">\r\n            <img class=\"card-img-top\" src={{ member.Content.TeamMember.Photo.Paths[0] | asset_url }} alt=\"\">\r\n            <div class=\"card-body\">\r\n              <h4 class=\"card-title\">{{ member.Content.TitlePart.Title }}</h4>\r\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{ member.Content.TeamMember.Position.Text }}</h6>\r\n              <p class=\"card-text\">{{ member.Content.HtmlBodyPart.Html }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n              <a href=\"#\">{{ member.Content.TeamMember.Email.Text }}</a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        {% endfor %}\r\n\t</div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "4qang4ha0w7qgyj6j2wkm81wwe",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T11:06:42.6242134Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign customerParent = Content[\"alias:customers\"].Content %}\r\n{% assign customers = Queries.CustomersQuery | query %}\r\n\r\n<h2>{{ customerParent.TitlePart.Title }}</h2>\r\n<div class=\"row\">\r\n{% for customer in customers %}\r\n  <div class=\"col-lg-2 col-sm-4 mb-4\">\r\n     <img class=\"img-fluid\" src=\"{{ customer.Content.Customer.Logo.Paths[0] | asset_url }}\" alt=\"\">\r\n  </div>\r\n{% endfor %}\r\n </div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "About"
+          }
+        },
+        {
           "ContentItemId": "[js: uuid()]",
           "ContentItemVersionId": "4cbv2rk3tjyg26ndn5jzt9y0wv",
           "ContentType": "RawHtml",
@@ -2206,6 +2907,18 @@
         {
           "Path": "700x400.png",
           "Base64": "[file:base64('../wwwroot/img/700x400.png')]"
+        },
+        {
+          "Path": "700x300.png",
+          "Base64": "[file:base64('../wwwroot/img/700x300.png')]"
+        },
+        {
+          "Path": "750x450.png",
+          "Base64": "[file:base64('../wwwroot/img/750x450.png')]"
+        },
+        {
+          "Path": "500x300.png",
+          "Base64": "[file:base64('../wwwroot/img/500x300.png')]"
         }
       ]
     }
