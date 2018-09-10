@@ -732,14 +732,14 @@
               "PartName": "Services",
               "Name": "Services",
               "Settings": {
-                "Position": "0"
+                "Position": "1"
               }
             },
             {
               "PartName": "TitlePart",
               "Name": "TitlePart",
               "Settings": {
-                "Position": "1"
+                "Position": "0"
               }
             },
             {
@@ -1284,6 +1284,50 @@
           ]
         },
         {
+          "Name": "Services",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "DisplayName": "Image",
+                "Editor": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Hint": null,
+                "Required": false,
+                "Multiple": false,
+                "Position": "0"
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Subheading",
+              "Settings": {
+                "DisplayName": "Subtitle",
+                "Editor": null,
+                "Hint": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "1"
+              }
+            }
+          ]
+        },
+        {
           "Name": "Service",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
@@ -1382,94 +1426,118 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "Name": "TeamMember",
-      "Settings": {},
-      "ContentPartFieldDefinitionRecords": [
-        {
-          "FieldName": "TextField",
-          "Name": "Position",
-          "Settings": {
-            "DisplayName": "Position",
-            "Editor": null,
-            "Hint": null,
-            "ContentIndexSettings": {
-              "Included": false,
-              "Stored": false,
-              "Analyzed": false,
-              "Sanitized": false,
-              "Tokenized": false,
-              "Template": null
-            },
-            "Position": "1"
-          }
         },
         {
-          "FieldName": "TextField",
-          "Name": "Email",
-          "Settings": {
-            "DisplayName": "Email",
-            "Editor": null,
-            "Hint": null,
-            "ContentIndexSettings": {
-              "Included": false,
-              "Stored": false,
-              "Analyzed": false,
-              "Sanitized": false,
-              "Tokenized": false,
-              "Template": null
+          "Name": "TeamMember",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Position",
+              "Settings": {
+                "DisplayName": "Position",
+                "Editor": null,
+                "Hint": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "1"
+              }
             },
-            "Position": "2"
-          }
+            {
+              "FieldName": "TextField",
+              "Name": "Email",
+              "Settings": {
+                "DisplayName": "Email",
+                "Editor": null,
+                "Hint": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "2"
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Photo",
+              "Settings": {
+                "DisplayName": "Photo",
+                "Editor": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Hint": null,
+                "Required": false,
+                "Multiple": false,
+                "Position": "0"
+              }
+            }
+          ]
         },
         {
-          "FieldName": "MediaField",
-          "Name": "Photo",
-          "Settings": {
-            "DisplayName": "Photo",
-            "Editor": null,
-            "ContentIndexSettings": {
-              "Included": false,
-              "Stored": false,
-              "Analyzed": false,
-              "Sanitized": false,
-              "Tokenized": false,
-              "Template": null
-            },
-            "Hint": null,
-            "Required": false,
-            "Multiple": false,
-            "Position": "0"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Customer",
-      "Settings": {},
-      "ContentPartFieldDefinitionRecords": [
+          "Name": "Customer",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Logo",
+              "Settings": {
+                "DisplayName": "Logo",
+                "Editor": null,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Hint": null,
+                "Required": false,
+                "Multiple": false,
+                "Position": "0"
+              }
+            }
+          ]
+        },
         {
-          "FieldName": "MediaField",
-          "Name": "Logo",
-          "Settings": {
-            "DisplayName": "Logo",
-            "Editor": null,
-            "ContentIndexSettings": {
-              "Included": false,
-              "Stored": false,
-              "Analyzed": false,
-              "Sanitized": false,
-              "Tokenized": false,
-              "Template": null
-            },
-            "Hint": null,
-            "Required": false,
-            "Multiple": false,
-            "Position": "0"
-          }
+          "Name": "Page",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "DisplayName": "Subtitle",
+                "Editor": null,
+                "Hint": "The subheading for the page",
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "0"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1605,47 +1673,8 @@
                       "Published": false,
                       "Author": "admin",
                       "LinkMenuItemPart": {
-                        "Name": "1 Column Portfolio",
-                        "Url": "portfolio1"
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
                         "Name": "2 Column Portfolio",
-                        "Url": null
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "3 Column Portfolio",
-                        "Url": null
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "4 Column Portfolio",
-                        "Url": null
+                        "Url": "portfolio"
                       }
                     },
                     {
@@ -2027,21 +2056,36 @@
           }
         },
         {
-          "ContentItemId": "[js: variables('servicesContentItemId')]",
-          "ContentItemVersionId": "[js: uuid()]",
+          "ContentItemId": "4hb2w9besr2e85m6e1ta3a1jmm",
+          "ContentItemVersionId": "4wn1acj3tg7f7wbfa6cv14w2cb",
           "ContentType": "Services",
           "Latest": true,
           "Published": true,
+          "ModifiedUtc": "2018-09-10T13:41:50.1846147Z",
+          "PublishedUtc": "2018-09-10T13:41:50.1896861Z",
+          "CreatedUtc": "2018-09-10T13:13:21.9209066Z",
           "Owner": "admin",
           "Author": "admin",
-          "Services": {},
+          "Services": {
+            "Image": {
+              "Paths": [
+                "1200x300.png"
+              ]
+            },
+            "Subheading": {
+              "Text": "Subheading"
+            }
+          },
           "TitlePart": {
             "Title": "Welcome to Modern Business"
           },
           "AliasPart": {
             "Alias": "services"
           },
-          "ListPart": {}
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          }
         },
         {
           "ContentItemId": "[js: uuid()]",
@@ -2374,7 +2418,7 @@
             }
           },
           "AutoroutePart": {
-            "Path": "portfolio1",
+            "Path": "portfolio",
             "SetHomepage": false
           },
           "FlowPart": {
@@ -2402,7 +2446,7 @@
             ]
           },
           "TitlePart": {
-            "Title": "Portfolio1"
+            "Title": "Portfolio"
           }
         },
         {
@@ -2713,31 +2757,66 @@
           }
         },
         {
-          "ContentItemId": "4w845p44nx4yeryf9rwf3wj94g",
-          "ContentItemVersionId": "4ava5em2vws1k6z3y936469t4b",
+          "ContentItemId": "4efhxh8yh3jhq2wqdhjrmjx4ms",
+          "ContentItemVersionId": "44asj2pwezqe1147qacmfh0ynp",
           "ContentType": "Page",
           "Latest": true,
           "Published": true,
-          "ModifiedUtc": "2018-09-10T11:06:42.6127312Z",
-          "PublishedUtc": "2018-09-10T11:06:42.6256989Z",
-          "CreatedUtc": "2018-09-10T10:17:05.7996088Z",
-          "Owner": "admin",
+          "ModifiedUtc": "2018-09-10T13:13:22.3626991Z",
+          "PublishedUtc": "2018-09-10T13:13:22.3633565Z",
+          "CreatedUtc": "2018-09-03T16:31:48.215308Z",
+          "Owner": null,
           "Author": "admin",
           "Page": {},
           "AutoroutePart": {
-            "Path": "about",
-            "SetHomepage": false
+            "Path": "index",
+            "SetHomepage": true
           },
           "FlowPart": {
             "Widgets": [
               {
                 "Id": 0,
-                "ContentItemId": "4b894xg6npzh0we12zmfrzxncg",
+                "ContentItemId": "49nfjk1p0p7n33y1y1r2dnj059",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.6766008Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign servicesParent = Content[\"alias:services\"] %}\r\n{% assign services = Queries.ServicesSummaryQuery | query %}\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <h1 class=\"my-4\">{{ servicesParent.Content.TitlePart.Title }}</h1>\r\n    </div>\r\n\r\n    {% for item in services %}\r\n    <div class=\"col-lg-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <h4 class=\"card-header\">{{ item.Content.TitlePart.Title }}</h4>\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                <a href=\"{{ item.Content.Service.Link.Url }}\" class=\"btn btn-primary\">{{ item.Content.Service.Link.Text }}</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n<div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "4n54w64wb5qwd6kc2j5rz82ym9",
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"] %}\r\n{% assign projects = Queries.PortfolioSummaryQuery | query %}\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <h2>{{ portfolio.Content.TitlePart.Title }}</h2>\r\n    </div>\r\n\r\n    {% for item in projects %}\r\n    <div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n        <div class=\"card h-100\">\r\n            <a href=\"#\"><img class=\"card-img-top\" src=\"{{ item.Content.Project.Image.Paths[0] | asset_url }}\" alt=\"\"></a>\r\n            <div class=\"card-body\">\r\n                <h4 class=\"card-title\">\r\n                    <a href=\"#\">{{ item.Content.TitlePart.Title }}</a>\r\n                </h4>\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n</div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "49n779a2w1my66f77qr581yx5g",
                 "ContentItemVersionId": null,
                 "ContentType": "Container",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-10T11:06:42.620554Z",
+                "ModifiedUtc": "2018-09-05T15:58:05.0695074Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": null,
@@ -2747,12 +2826,229 @@
                   "Widgets": [
                     {
                       "Id": 0,
-                      "ContentItemId": "479f7q1nmden803kd0ngbvd4mk",
+                      "ContentItemId": "4nzhdvs33rh19x6dqrxfkvrfns",
+                      "ContentItemVersionId": null,
+                      "ContentType": "RawHtml",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-05T15:58:05.0703143Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "RawHtml": {
+                        "Content": {
+                          "Html": "\r\n<h2>Modern Business Features</h2>\r\n\r\n                <p>The Modern Business template by Start Bootstrap includes:</p>\r\n\r\n                <ul>\r\n\r\n                    <li>\r\n\r\n                        <strong>Bootstrap v4</strong>\r\n\r\n                    </li>\r\n\r\n                    <li>jQuery</li>\r\n\r\n                    <li>Font Awesome</li>\r\n\r\n                    <li>Working contact form with validation</li>\r\n\r\n                    <li>Unstyled page elements for easy customization</li>\r\n\r\n                </ul>\r\n\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>\r\n\r\n"
+                        }
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 50
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4db449xj0nk2tt7fgprjm1e5np",
                       "ContentItemVersionId": null,
                       "ContentType": "ImageWidget",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-10T11:06:42.621191Z",
+                      "ModifiedUtc": "2018-09-05T15:58:05.0718171Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "Image": {
+                        "Media": {
+                          "Paths": [
+                            "700x450.png"
+                          ]
+                        },
+                        "Caption": {
+                          "Text": null
+                        }
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 50
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "438q1hzggvenfxkjbmjs03h44x",
+                "ContentItemVersionId": null,
+                "ContentType": "RawHtml",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-04T17:20:27.682725Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "RawHtml": {
+                  "Content": {
+                    "Html": " <hr>\r\n <!-- Call to Action Section -->\r\n        <div class=\"row mb-4\">\r\n            <div class=\"col-md-8\">\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <a class=\"btn btn-lg btn-secondary btn-block\" href=\"#\">Call to Action</a>\r\n            </div>\r\n        </div>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Homepage"
+          }
+        },
+        {
+          "ContentItemId": "4aez1zvje0ap127czq6860nfmw",
+          "ContentItemVersionId": "4qne7x0ma41jd0nr7vs9w6rnnr",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T13:18:23.8654587Z",
+          "PublishedUtc": "2018-09-10T13:18:23.8724353Z",
+          "CreatedUtc": "2018-09-06T13:43:42.8680747Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": "Subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4mx7f50nn25av7cz50jmswydd1",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T13:18:23.8696986Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"].Content %}\r\n{% assign projects = Queries.PortfolioQuery | query %}\r\n\r\n\r\n<div class=\"row\">\r\n{% for item in projects %}\r\n  \t<div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n        <div class=\"card h-100\">\r\n            <a href=\"#\"><img class=\"card-img-top\" src=\"{{ item.Content.Project.Image.Paths[0] | asset_url }}\" alt=\"\"></a>\r\n            <div class=\"card-body\">\r\n              <h4 class=\"card-title\">\r\n                <a href=\"#\">{{ item.Content.TitlePart.Title }}</a>\r\n              </h4>\r\n              <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html }}</p>\r\n            </div>\r\n    \t</div>\r\n\t</div>\r\n{% endfor %}\r\n</div>\r\n\r\n\r\n\r\n"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Portfolio"
+          }
+        },
+        {
+          "ContentItemId": "4wjp8x3p8nbxgtrew6cv0zthwy",
+          "ContentItemVersionId": "4vtgk40tgazhk33tbv21jb8pm5",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T14:19:58.1948415Z",
+          "PublishedUtc": "2018-09-10T14:19:58.213851Z",
+          "CreatedUtc": "2018-09-10T13:30:13.9039839Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": "Subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "services",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4k8vqdav5519g5vvg6fd7fndw7",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T14:19:58.211297Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign servicesParent = Content[\"alias:services\"] %}\r\n{% assign services = Queries.ServicesSummaryQuery | query %}\r\n\r\n<img class=\"img-fluid rounded mb-4\" alt=\"\" src=\"{{ servicesParent.Content.Services.Image.Paths[0] | asset_url }}\"/>\r\n\r\n<div class=\"row\">\r\n\r\n    {% for item in services %}\r\n    <div class=\"col-lg-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <h4 class=\"card-header\">{{ item.Content.TitlePart.Title }}</h4>\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                <a href=\"{{ item.Content.Service.Link.Url }}\" class=\"btn btn-primary\">{{ item.Content.Service.Link.Text }}</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n<div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Services"
+          }
+        },
+        {
+          "ContentItemId": "4w845p44nx4yeryf9rwf3wj94g",
+          "ContentItemVersionId": "4qb27akee5ffhr5nmemmjk9hnw",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-10T14:21:34.8296401Z",
+          "PublishedUtc": "2018-09-10T14:21:34.8430713Z",
+          "CreatedUtc": "2018-09-10T10:17:05.7996088Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": "Subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "about",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4a9j7mag8yxk663b3zzvcrsfn9",
+                "ContentItemVersionId": null,
+                "ContentType": "Container",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-10T14:21:34.8359409Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Container": {},
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4vy6pwm3tbag0xp5d2225wnace",
+                      "ContentItemVersionId": null,
+                      "ContentType": "ImageWidget",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-10T14:21:34.8364926Z",
                       "PublishedUtc": null,
                       "CreatedUtc": null,
                       "Owner": null,
@@ -2774,12 +3070,12 @@
                     },
                     {
                       "Id": 0,
-                      "ContentItemId": "49sx9yy1cjw54zkpn9xad0xn4e",
+                      "ContentItemId": "4pq5rb3zc5kd40mqppz5kgk8m8",
                       "ContentItemVersionId": null,
                       "ContentType": "RawHtml",
                       "Latest": false,
                       "Published": false,
-                      "ModifiedUtc": "2018-09-10T11:06:42.6224896Z",
+                      "ModifiedUtc": "2018-09-10T14:21:34.8377939Z",
                       "PublishedUtc": null,
                       "CreatedUtc": null,
                       "Owner": null,
@@ -2803,12 +3099,12 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "445pazrpwjzrt0ywnx8w9s9c4d",
+                "ContentItemId": "47px8s3nkkqgtwws8a2bke58ce",
                 "ContentItemVersionId": null,
                 "ContentType": "LiquidWidget",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-10T11:06:42.6234436Z",
+                "ModifiedUtc": "2018-09-10T14:21:34.8394329Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": null,
@@ -2823,12 +3119,12 @@
               },
               {
                 "Id": 0,
-                "ContentItemId": "4qang4ha0w7qgyj6j2wkm81wwe",
+                "ContentItemId": "4fehp75frd9e0tw0593m73dh5m",
                 "ContentItemVersionId": null,
                 "ContentType": "LiquidWidget",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-10T11:06:42.6242134Z",
+                "ModifiedUtc": "2018-09-10T14:21:34.8409561Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": null,
@@ -2919,6 +3215,10 @@
         {
           "Path": "500x300.png",
           "Base64": "[file:base64('../wwwroot/img/500x300.png')]"
+        },
+        {
+          "Path": "1200x300.png",
+          "Base64": "[file:base64('../wwwroot/img/1200x300.png')]"
         }
       ]
     }
