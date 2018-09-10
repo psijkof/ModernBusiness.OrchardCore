@@ -2,10 +2,6 @@
 {% assign projects = Queries.PortfolioSummaryQuery | query %}
 
 <div class="row">
-    <div class="col-12">
-        <h2>{{ portfolio.Content.TitlePart.Title }}</h2>
-    </div>
-
     {% for item in projects %}
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
@@ -20,3 +16,4 @@
     </div>
     {% endfor %}
 </div>
+
