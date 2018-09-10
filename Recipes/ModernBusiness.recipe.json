@@ -2436,7 +2436,7 @@
                 "Owner": null,
                 "Author": "admin",
                 "LiquidPart": {
-                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"].Content %}\r\n{% assign projects = Queries.PortfolioQuery | query %}\r\n\r\n{% for item in projects %}\r\n<div class=\"row\">\r\n     <div class=\"col-md-7\">\r\n        <a href=\"#\">\r\n          \t<img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"http://placehold.it/700x300\" alt=\"\">\r\n        </a>\r\n     </div>\r\n     <div class=\"col-md-5\">\r\n         <h3>{{ item.Content.TitlePart.Title }}</h3>\r\n         <p>{{ item.Content.HtmlBodyPart.Html }}</p>\r\n         <a class=\"btn btn-primary\" href=\"#\">View Project\r\n           \t<span class=\"glyphicon glyphicon-chevron-right\"></span>\r\n         </a>\r\n    </div>\r\n</div>\r\n{% if item != projects.last %}\r\n\t<hr>\r\n  {% endif %}\r\n\r\n{% endfor %}\r\n"
+                  "Liquid": "[file:text('Snippets/Portfolio.html')]"
                 },
                 "FlowMetadata": {
                   "Alignment": 3,
@@ -2943,7 +2943,7 @@
                 "Owner": null,
                 "Author": "admin",
                 "LiquidPart": {
-                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"].Content %}\r\n{% assign projects = Queries.PortfolioQuery | query %}\r\n\r\n\r\n<div class=\"row\">\r\n{% for item in projects %}\r\n  \t<div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n        <div class=\"card h-100\">\r\n            <a href=\"#\"><img class=\"card-img-top\" src=\"{{ item.Content.Project.Image.Paths[0] | asset_url }}\" alt=\"\"></a>\r\n            <div class=\"card-body\">\r\n              <h4 class=\"card-title\">\r\n                <a href=\"#\">{{ item.Content.TitlePart.Title }}</a>\r\n              </h4>\r\n              <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html }}</p>\r\n            </div>\r\n    \t</div>\r\n\t</div>\r\n{% endfor %}\r\n</div>\r\n\r\n\r\n\r\n"
+                  "Liquid": "[file:text('Snippets/Portfolio.html')]"
                 },
                 "FlowMetadata": {
                   "Alignment": 3,
@@ -2958,12 +2958,12 @@
         },
         {
           "ContentItemId": "4wjp8x3p8nbxgtrew6cv0zthwy",
-          "ContentItemVersionId": "4vtgk40tgazhk33tbv21jb8pm5",
+          "ContentItemVersionId": "4yrg31h5ejmbnzvfpnvd2tsaxg",
           "ContentType": "Page",
           "Latest": true,
           "Published": true,
-          "ModifiedUtc": "2018-09-10T14:19:58.1948415Z",
-          "PublishedUtc": "2018-09-10T14:19:58.213851Z",
+          "ModifiedUtc": "2018-09-10T16:17:25.9745491Z",
+          "PublishedUtc": "2018-09-10T16:17:25.9887381Z",
           "CreatedUtc": "2018-09-10T13:30:13.9039839Z",
           "Owner": "admin",
           "Author": "admin",
@@ -2980,18 +2980,18 @@
             "Widgets": [
               {
                 "Id": 0,
-                "ContentItemId": "4k8vqdav5519g5vvg6fd7fndw7",
+                "ContentItemId": "46622jp28phng0hnw9c7q976m0",
                 "ContentItemVersionId": null,
                 "ContentType": "LiquidWidget",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2018-09-10T14:19:58.211297Z",
+                "ModifiedUtc": "2018-09-10T16:17:25.9831677Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": null,
                 "Author": "admin",
                 "LiquidPart": {
-                  "Liquid": "{% assign servicesParent = Content[\"alias:services\"] %}\r\n{% assign services = Queries.ServicesSummaryQuery | query %}\r\n\r\n<img class=\"img-fluid rounded mb-4\" alt=\"\" src=\"{{ servicesParent.Content.Services.Image.Paths[0] | asset_url }}\"/>\r\n\r\n<div class=\"row\">\r\n\r\n    {% for item in services %}\r\n    <div class=\"col-lg-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <h4 class=\"card-header\">{{ item.Content.TitlePart.Title }}</h4>\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                <a href=\"{{ item.Content.Service.Link.Url }}\" class=\"btn btn-primary\">{{ item.Content.Service.Link.Text }}</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n<div>"
+                  "Liquid": "{% assign servicesParent = Content[\"alias:services\"] %}\r\n{% assign services = Queries.ServicesSummaryQuery | query %}\r\n\r\n<img class=\"img-fluid rounded mb-4\" src=\"{{ servicesParent.Content.Services.Image.Paths[0] | asset_url }}\" alt=\"\">\r\n\r\n<div class=\"row\">\r\n    {% for item in services %}\r\n    <div class=\"col-lg-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <h4 class=\"card-header\">{{ item.Content.TitlePart.Title }}</h4>\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                <a href=\"{{ item.Content.Service.Link.Url }}\" class=\"btn btn-primary\">{{ item.Content.Service.Link.Text }}</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n</div>"
                 },
                 "FlowMetadata": {
                   "Alignment": 3,
