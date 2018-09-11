@@ -38,6 +38,7 @@
         "OrchardCore.Alias",
         "OrchardCore.Autoroute",
         "OrchardCore.Html",
+        "OrchardCore.HomeRoute",
         "OrchardCore.ContentFields",
         "OrchardCore.ContentPreview",
         "OrchardCore.Contents",
@@ -45,8 +46,10 @@
         "OrchardCore.CustomSettings",
         "OrchardCore.Deployment",
         "OrchardCore.Deployment.Remote",
+        "OrchardCore.Email",
         "OrchardCore.Feeds",
         "OrchardCore.Flows",
+        "OrchardCore.Forms",
         "OrchardCore.Indexing",
         "OrchardCore.Layers",
         "OrchardCore.Lucene",
@@ -56,9 +59,12 @@
         "OrchardCore.Media",
         "OrchardCore.Menu",
         "OrchardCore.Queries",
+        "OrchardCore.Scripting",
         "OrchardCore.Title",
         "OrchardCore.Templates",
         "OrchardCore.Widgets",
+        "OrchardCore.Workflows",
+        "OrchardCore.Workflows.Http",
 
         // Themes
         "ModernBusiness",
@@ -981,30 +987,188 @@
           ]
         },
         {
-          "Name": "Customer",
-          "DisplayName": "Customer",
+          "Name": "Form",
+          "DisplayName": "Form",
           "Settings": {
-            "Creatable": "False",
-            "Draftable": "False",
-            "Versionable": "False",
-            "Listable": "False",
-            "Securable": "False",
-            "Stereotype": null
+            "Stereotype": "Widget"
           },
           "ContentTypePartDefinitionRecords": [
             {
-              "PartName": "Customer",
-              "Name": "Customer",
-              "Settings": {
-                "Position": "1"
-              }
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {}
             },
+            {
+              "PartName": "FormPart",
+              "Name": "FormPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "Label",
+          "DisplayName": "Label",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
             {
               "PartName": "TitlePart",
               "Name": "TitlePart",
-              "Settings": {
-                "Position": "0"
-              }
+              "Settings": {}
+            },
+            {
+              "PartName": "FormElementPart",
+              "Name": "FormElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "LabelPart",
+              "Name": "LabelPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "Input",
+          "DisplayName": "Input",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FormInputElementPart",
+              "Name": "FormInputElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "FormElementPart",
+              "Name": "FormElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "InputPart",
+              "Name": "InputPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "TextArea",
+          "DisplayName": "Text Area",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FormInputElementPart",
+              "Name": "FormInputElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "FormElementPart",
+              "Name": "FormElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "TextAreaPart",
+              "Name": "TextAreaPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "Select",
+          "DisplayName": "Select",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FormInputElementPart",
+              "Name": "FormInputElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "FormElementPart",
+              "Name": "FormElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "SelectPart",
+              "Name": "SelectPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "Button",
+          "DisplayName": "Button",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FormInputElementPart",
+              "Name": "FormInputElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "FormElementPart",
+              "Name": "FormElementPart",
+              "Settings": {}
+            },
+            {
+              "PartName": "ButtonPart",
+              "Name": "ButtonPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "NoCaptcha",
+          "DisplayName": "No Captcha",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "NoCaptchaPart",
+              "Name": "NoCaptchaPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "ValidationSummary",
+          "DisplayName": "Validation Summary",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ValidationSummaryPart",
+              "Name": "ValidationSummaryPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "Validation",
+          "DisplayName": "Validation",
+          "Settings": {
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ValidationPart",
+              "Name": "ValidationPart",
+              "Settings": {}
             }
           ]
         }
@@ -1536,6 +1700,391 @@
                 },
                 "Position": "0"
               }
+            }
+          ]
+        },
+        {
+          "Name": "FormPart",
+          "Settings": {
+            "Attachable": "True",
+            "Description": "Turns your content item into a form."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "FormElementPart",
+          "Settings": {
+            "Description": "Provides attributes common to all form elements."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "FormInputElementPart",
+          "Settings": {
+            "Description": "Provides attributes common to all input form elements."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "LabelPart",
+          "Settings": {
+            "Description": "Provides label properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "InputPart",
+          "Settings": {
+            "Description": "Provides input field properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "TextAreaPart",
+          "Settings": {
+            "Description": "Provides text area properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "SelectPart",
+          "Settings": {
+            "Description": "Provides select field properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ButtonPart",
+          "Settings": {
+            "Description": "Provides button properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "NoCaptchaPart",
+          "Settings": {
+            "Description": "Provides captcha properties."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ValidationSummaryPart",
+          "Settings": {
+            "Description": "Displays a validation summary."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ValidationPart",
+          "Settings": {
+            "Description": "Displays a field validation error."
+          },
+          "ContentPartFieldDefinitionRecords": []
+        }
+      ]
+    },
+    {
+      "name": "WorkflowType",
+      "data": [
+        {
+          "WorkflowTypeId": "4582zcr47jqh04v8b5t9xy6qcq",
+          "Name": "Contact Form",
+          "IsEnabled": true,
+          "IsSingleton": false,
+          "DeleteFinishedWorkflows": false,
+          "Activities": [
+            {
+              "ActivityId": "4v3f76cfab5sa6xvded1h3cx5g",
+              "Name": "HttpRequestEvent",
+              "X": 0,
+              "Y": 0,
+              "IsStart": true,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Contact Form Submitted"
+                },
+                "HttpMethod": "POST",
+                "Url": "/Workflows/Invoke?token=CfDJ8L4xCCz1RHtCpMaVtR-_DDJHklms6FKh6E4vo2NJ9RgjCW_1OfQ7r_a5g2jAyvpG5FTEp0b98NSs8QFUwFEhq9QgggtPn5G8HiTd_IGbLhl2T-IGwfjU7siHqiROsQKGyMq4pogBiLERT3IJnar024hBm-hsXWOOoJC9x3tRfEQBvn_99sfaGiNYyoTWrmfX2loHl-gjuQZZ_BgGcTa4dV6_CVv3clpUhEZfQswt3NEF",
+                "ValidateAntiforgeryToken": true
+              }
+            },
+            {
+              "ActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "Name": "ForkTask",
+              "X": 80,
+              "Y": 240,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Form Fields"
+                },
+                "Forks": [
+                  "\"Validate Name",
+                  "Validate Phone",
+                  "Validate Email",
+                  "Validate Message",
+                  "Validate Captcha\""
+                ]
+              }
+            },
+            {
+              "ActivityId": "4fmmxevvccybv5k07ceggjqmw0",
+              "Name": "ValidateFormFieldTask",
+              "X": 20,
+              "Y": 480,
+              "IsStart": false,
+              "Properties": {
+                "FieldName": "Name",
+                "ErrorMessage": "Name is required",
+                "ActivityMetadata": {
+                  "Title": "Validate Name"
+                }
+              }
+            },
+            {
+              "ActivityId": "4bjrfjxtgvf1a239jm1x8a7nd9",
+              "Name": "ValidateFormFieldTask",
+              "X": 260,
+              "Y": 30,
+              "IsStart": false,
+              "Properties": {
+                "FieldName": "Phone",
+                "ErrorMessage": "Phone is required",
+                "ActivityMetadata": {
+                  "Title": "Validate Phone"
+                }
+              }
+            },
+            {
+              "ActivityId": "4f0kkef1x36r151nzkwv97ef4q",
+              "Name": "ValidateFormFieldTask",
+              "X": 240,
+              "Y": 460,
+              "IsStart": false,
+              "Properties": {
+                "FieldName": "Email",
+                "ErrorMessage": "Email is required",
+                "ActivityMetadata": {
+                  "Title": "Validate Email"
+                }
+              }
+            },
+            {
+              "ActivityId": "425b4eqq4409zrytafqd7rb7nn",
+              "Name": "ValidateFormFieldTask",
+              "X": 440,
+              "Y": 580,
+              "IsStart": false,
+              "Properties": {
+                "FieldName": "Message",
+                "ErrorMessage": "Message is required",
+                "ActivityMetadata": {
+                  "Title": "Validate Message"
+                }
+              }
+            },
+            {
+              "ActivityId": "4r3sjffa8y80zte23gg5r3565m",
+              "Name": "ValidateNoCaptchaTask",
+              "X": 490,
+              "Y": 80,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": null
+                }
+              }
+            },
+            {
+              "ActivityId": "46epnxmh1p77wta5h61cmmqsct",
+              "Name": "JoinTask",
+              "X": 1050,
+              "Y": 200,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": null
+                },
+                "Mode": 0
+              }
+            },
+            {
+              "ActivityId": "4rbn2ypr7h4j1wk4ra5bkrm2nb",
+              "Name": "ValidateFormTask",
+              "X": 1580,
+              "Y": 190,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": null
+                }
+              }
+            },
+            {
+              "ActivityId": "4x6yxhmms7ja9y73r2wpmmpxwk",
+              "Name": "HttpRedirectTask",
+              "X": 1560,
+              "Y": 440,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Display Form Errors"
+                },
+                "Location": {
+                  "Expression": "/contact"
+                },
+                "Permanent": false
+              }
+            },
+            {
+              "ActivityId": "4zt3raec28e4q65krmaznjcrmk",
+              "Name": "EmailTask",
+              "X": 1120,
+              "Y": 350,
+              "IsStart": false,
+              "Properties": {
+                "Sender": {
+                  "Expression": "marcosaidos@grupoma.eu"
+                },
+                "Recipients": {
+                  "Expression": "marcosaidos@grupoma.eu"
+                },
+                "Subject": {
+                  "Expression": "Contact form submitted by {{ Request.Form.Name }}"
+                },
+                "Body": {
+                  "Expression": "<p>The following information was submitted:<p/>\r\n<p>Name: {{ Request.Form.Name }}</p>\r\n<p>Email: {{ Request.Form.Email }}</p>\r\n<p>Message: {{ Request.Form.Message }}</p>"
+                },
+                "ActivityMetadata": {
+                  "Title": "Send Email to Site Admin"
+                }
+              }
+            },
+            {
+              "ActivityId": "4gh4h57mwgb7bz0zhz3qvy8wma",
+              "Name": "HttpRedirectTask",
+              "X": 1190,
+              "Y": 540,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Display Thank You Page"
+                },
+                "Location": {
+                  "Expression": "/thankyou"
+                },
+                "Permanent": false
+              }
+            },
+            {
+              "ActivityId": "44d2nc99qqfx7vmfdeh07sktdw",
+              "Name": "BindModelStateTask",
+              "X": 120,
+              "Y": 140,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Keep Values"
+                }
+              }
+            }
+          ],
+          "Transitions": [
+            {
+              "Id": 0,
+              "SourceActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "SourceOutcomeName": "\"Validate Name",
+              "DestinationActivityId": "4fmmxevvccybv5k07ceggjqmw0"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "SourceOutcomeName": "Validate Phone",
+              "DestinationActivityId": "4bjrfjxtgvf1a239jm1x8a7nd9"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "SourceOutcomeName": "Validate Email",
+              "DestinationActivityId": "4f0kkef1x36r151nzkwv97ef4q"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "SourceOutcomeName": "Validate Message",
+              "DestinationActivityId": "425b4eqq4409zrytafqd7rb7nn"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4xhmc4z3dxsh4tp2aecw29jkws",
+              "SourceOutcomeName": "Validate Captcha\"",
+              "DestinationActivityId": "4r3sjffa8y80zte23gg5r3565m"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4bjrfjxtgvf1a239jm1x8a7nd9",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "46epnxmh1p77wta5h61cmmqsct"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4r3sjffa8y80zte23gg5r3565m",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "46epnxmh1p77wta5h61cmmqsct"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "425b4eqq4409zrytafqd7rb7nn",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "46epnxmh1p77wta5h61cmmqsct"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4f0kkef1x36r151nzkwv97ef4q",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "46epnxmh1p77wta5h61cmmqsct"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4fmmxevvccybv5k07ceggjqmw0",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "46epnxmh1p77wta5h61cmmqsct"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4rbn2ypr7h4j1wk4ra5bkrm2nb",
+              "SourceOutcomeName": "Valid",
+              "DestinationActivityId": "4zt3raec28e4q65krmaznjcrmk"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4rbn2ypr7h4j1wk4ra5bkrm2nb",
+              "SourceOutcomeName": "Invalid",
+              "DestinationActivityId": "4x6yxhmms7ja9y73r2wpmmpxwk"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4zt3raec28e4q65krmaznjcrmk",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4gh4h57mwgb7bz0zhz3qvy8wma"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4v3f76cfab5sa6xvded1h3cx5g",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "44d2nc99qqfx7vmfdeh07sktdw"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "44d2nc99qqfx7vmfdeh07sktdw",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4xhmc4z3dxsh4tp2aecw29jkws"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "46epnxmh1p77wta5h61cmmqsct",
+              "SourceOutcomeName": "Joined",
+              "DestinationActivityId": "4rbn2ypr7h4j1wk4ra5bkrm2nb"
             }
           ]
         }
@@ -2757,54 +3306,6 @@
           }
         },
         {
-          "ContentItemId": "4aez1zvje0ap127czq6860nfmw",
-          "ContentItemVersionId": "4qne7x0ma41jd0nr7vs9w6rnnr",
-          "ContentType": "Page",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2018-09-10T13:18:23.8654587Z",
-          "PublishedUtc": "2018-09-10T13:18:23.8724353Z",
-          "CreatedUtc": "2018-09-06T13:43:42.8680747Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": "Subheading"
-            }
-          },
-          "AutoroutePart": {
-            "Path": "portfolio",
-            "SetHomepage": false
-          },
-          "FlowPart": {
-            "Widgets": [
-              {
-                "Id": 0,
-                "ContentItemId": "4mx7f50nn25av7cz50jmswydd1",
-                "ContentItemVersionId": null,
-                "ContentType": "LiquidWidget",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2018-09-10T13:18:23.8696986Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LiquidPart": {
-                  "Liquid": "[file:text('Snippets/Portfolio.html')]"
-                },
-                "FlowMetadata": {
-                  "Alignment": 3,
-                  "Size": 100
-                }
-              }
-            ]
-          },
-          "TitlePart": {
-            "Title": "Portfolio"
-          }
-        },
-        {
           "ContentItemId": "4wjp8x3p8nbxgtrew6cv0zthwy",
           "ContentItemVersionId": "4yrg31h5ejmbnzvfpnvd2tsaxg",
           "ContentType": "Page",
@@ -2989,6 +3490,411 @@
           },
           "TitlePart": {
             "Title": "About"
+          }
+        },
+        {
+          "ContentItemId": "4a2wwz3ah2vey5d2mf538z89n2",
+          "ContentItemVersionId": "4tbjyfsqv0d3q2cmbykx54rdcj",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-11T10:05:42.3667359Z",
+          "PublishedUtc": "2018-09-11T10:05:42.384176Z",
+          "CreatedUtc": "2018-09-11T10:05:23.3420683Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": null
+            }
+          },
+          "AutoroutePart": {
+            "Path": "thankyou",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4qjbn7hkfqmhfrxrganyxn1qw0",
+                "ContentItemVersionId": null,
+                "ContentType": "Paragraph",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-11T10:05:42.376628Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Paragraph": {
+                  "Content": {
+                    "Html": "Thank you for contacting us! We will get back to you as soon as possible."
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "ThankYou"
+          }
+        },
+        {
+          "ContentItemId": "4x1q8gdjwhg2f1xgrq36sevkd4",
+          "ContentItemVersionId": "4dybc01qbg8j64agbvs98mdk4y",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-11T10:16:58.7237883Z",
+          "PublishedUtc": "2018-09-11T10:16:58.7594894Z",
+          "CreatedUtc": "2018-09-10T16:53:39.1648868Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {
+            "Subtitle": {
+              "Text": "Subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "contact",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4eapz2y23jdfhww0v48gervwwq",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-11T10:16:58.7309878Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% script source:\"/ModernBusiness/js/contact_me.js\", debug_src:\"/ModernBusiness/js/contact_me.js\", at:\"Foot\" %}\r\n{% script source:\"/ModernBusiness/js/jqBootstrapValidation.js\", at:\"Foot\"%}\r\n\r\n<div class=\"row\">\r\n        <!-- Map Column -->\r\n        <div class=\"col-lg-8 mb-4\">\r\n          <!-- Embedded Google Map -->\r\n          <iframe width=\"100%\" height=\"400px\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed\"></iframe>\r\n        </div>\r\n        <!-- Contact Details Column -->\r\n        <div class=\"col-lg-4 mb-4\">\r\n          <h3>Contact Details</h3>\r\n          <p>\r\n            3481 Melrose Place\r\n            <br>Beverly Hills, CA 90210\r\n            <br>\r\n          </p>\r\n          <p>\r\n            <abbr title=\"Phone\">P</abbr>: (123) 456-7890\r\n          </p>\r\n          <p>\r\n            <abbr title=\"Email\">E</abbr>:\r\n            <a href=\"mailto:name@example.com\">name@example.com\r\n            </a>\r\n          </p>\r\n          <p>\r\n            <abbr title=\"Hours\">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM\r\n          </p>\r\n        </div>\r\n      </div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "47ae5mgyrkqgc76ss4y6t4hamk",
+                "ContentItemVersionId": null,
+                "ContentType": "Form",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-11T10:16:58.733129Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "TitlePart": {
+                  "Title": "Send us a Message"
+                },
+                "FormPart": {
+                  "Action": "/Workflows/Invoke?token=CfDJ8L4xCCz1RHtCpMaVtR-_DDJHklms6FKh6E4vo2NJ9RgjCW_1OfQ7r_a5g2jAyvpG5FTEp0b98NSs8QFUwFEhq9QgggtPn5G8HiTd_IGbLhl2T-IGwfjU7siHqiROsQKGyMq4pogBiLERT3IJnar024hBm-hsXWOOoJC9x3tRfEQBvn_99sfaGiNYyoTWrmfX2loHl-gjuQZZ_BgGcTa4dV6_CVv3clpUhEZfQswt3NEF",
+                  "Method": "POST",
+                  "WorkflowTypeId": null
+                },
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "Id": 0,
+                      "ContentItemId": "489hqrmmqh04y3e71krt8ky2wm",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Label",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7356922Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "TitlePart": {
+                        "Title": "Full Name:"
+                      },
+                      "FormElementPart": {
+                        "Id": "lblName"
+                      },
+                      "LabelPart": {
+                        "For": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4edwvhymc60ajvctvhsvzsd2ng",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7377351Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "FormInputElementPart": {
+                        "Name": "Name"
+                      },
+                      "FormElementPart": {
+                        "Id": "Name"
+                      },
+                      "InputPart": {
+                        "Type": "text",
+                        "DefaultValue": null,
+                        "Placeholder": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4ea17ff0y97jr41pa2mjymxvmf",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Label",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7392787Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "TitlePart": {
+                        "Title": "Phone Number:"
+                      },
+                      "FormElementPart": {
+                        "Id": "lblPhone"
+                      },
+                      "LabelPart": {
+                        "For": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 75
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4pzhktxay24hp4x7p5tv14jgdf",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7412473Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "FormInputElementPart": {
+                        "Name": "Phone"
+                      },
+                      "FormElementPart": {
+                        "Id": "Phone"
+                      },
+                      "InputPart": {
+                        "Type": "tel",
+                        "DefaultValue": null,
+                        "Placeholder": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "456s2svp9gwpm6fxr6hyjhe4dj",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Label",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7430673Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "TitlePart": {
+                        "Title": "Email Address:"
+                      },
+                      "FormElementPart": {
+                        "Id": "lblEmail"
+                      },
+                      "LabelPart": {
+                        "For": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4zdwggb8jxqa906j14vgq484nt",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7462287Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "FormInputElementPart": {
+                        "Name": "Email"
+                      },
+                      "FormElementPart": {
+                        "Id": "Email"
+                      },
+                      "InputPart": {
+                        "Type": "email",
+                        "DefaultValue": null,
+                        "Placeholder": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4qayvje00wrdptgxgq4tr4n5c8",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Label",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7483495Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "TitlePart": {
+                        "Title": "Message:"
+                      },
+                      "FormElementPart": {
+                        "Id": "lblMessage"
+                      },
+                      "LabelPart": {
+                        "For": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4kp2wccbjwfsdykyr2s95x6qck",
+                      "ContentItemVersionId": null,
+                      "ContentType": "TextArea",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7504756Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "FormInputElementPart": {
+                        "Name": "Message"
+                      },
+                      "FormElementPart": {
+                        "Id": "Message"
+                      },
+                      "TextAreaPart": {
+                        "DefaultValue": null,
+                        "Placeholder": null
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "4zqkgsm0j53e57mgs8g4d3n5mm",
+                      "ContentItemVersionId": null,
+                      "ContentType": "NoCaptcha",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7523418Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "NoCaptchaPart": {},
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "42jtk83qpx52g0304mgrfcnpn2",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Button",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7537177Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "FormInputElementPart": {
+                        "Name": "Send"
+                      },
+                      "FormElementPart": {
+                        "Id": "btnSend"
+                      },
+                      "ButtonPart": {
+                        "Text": "Send Message",
+                        "Type": "submit"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "Id": 0,
+                      "ContentItemId": "47mhsyp6fwzaaz2emqbzj4hqns",
+                      "ContentItemVersionId": null,
+                      "ContentType": "ValidationSummary",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2018-09-11T10:16:58.7555031Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "admin",
+                      "ValidationSummaryPart": {},
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 66
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Contact"
           }
         },
         {
