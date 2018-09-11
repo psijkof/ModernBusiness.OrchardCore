@@ -1,0 +1,17 @@
+﻿<div class="row">
+	<div class="col-md-8">
+		<img class="img-fluid" src="{{ Model.ContentItem.Content.Project.Image.Paths[0] | asset_url }}" alt="">
+	</div>
+
+	<div class="col-md-4">
+		<h3 class="my-3">Project Description</h3>
+		<p>{{ Model.ContentItem.Content.HtmlBodyPart.Html }}</p>
+		<h3 class="my-3">Project Details</h3>
+		<ul>
+			<li>Lorem Ipsum</li>
+			<li>Dolor Sit Amet</li>
+			<li>Consectetur</li>
+			<li>Adipiscing Elit</li>
+		</ul>
+	</div>
+</div>
