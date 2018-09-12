@@ -487,7 +487,7 @@
             "Creatable": "False",
             "Draftable": "True",
             "Versionable": "True",
-            "Listable": "True",
+            "Listable": "False",
             "Securable": "True",
             "Stereotype": "Widget"
           },
@@ -620,6 +620,13 @@
               "Name": "TitlePart",
               "Settings": {
                 "Position": "0"
+              }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "1"
               }
             }
           ]
@@ -819,6 +826,13 @@
               "Settings": {
                 "Position": "3"
               }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "1"
+              }
             }
           ]
         },
@@ -853,6 +867,27 @@
               "Name": "TitlePart",
               "Settings": {
                 "Position": "2"
+              }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "Position": "1",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": null,
+                "Pattern": "{{ ContentItem | container | display_text | slugify }}/{{ ContentItem | display_text | slugify }}",
+                "AllowCustomPath": "True",
+                "ShowHomepageOption": "False",
+                "ContentIndexSettings": {}
               }
             }
           ]
@@ -1682,6 +1717,16 @@
         {
           "Name": "Page",
           "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "SubtitlePart",
+          "Settings": {
+            "Attachable": "True",
+            "Reusable": "False",
+            "Description": "Provides a subtitle for a content item",
+            "DisplayName": null
+          },
           "ContentPartFieldDefinitionRecords": [
             {
               "FieldName": "TextField",
@@ -1689,7 +1734,7 @@
               "Settings": {
                 "DisplayName": "Subtitle",
                 "Editor": null,
-                "Hint": "The subheading for the page",
+                "Hint": "Provides subtitle for content item",
                 "ContentIndexSettings": {
                   "Included": false,
                   "Stored": false,
@@ -2168,7 +2213,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "About",
-                  "Url": "about"
+                  "Url": "~/about"
                 }
               },
               {
@@ -2182,7 +2227,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Services",
-                  "Url": "services"
+                  "Url": "~/services"
                 }
               },
               {
@@ -2196,12 +2241,12 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Contact",
-                  "Url": "contact"
+                  "Url": "~/contact"
                 }
               },
               {
                 "Id": 0,
-                "ContentItemId": "[js: uuid()]",
+                "ContentItemId": "4ckzj5gq74v2r36wb4yqpmdm4z",
                 "ContentItemVersionId": null,
                 "ContentType": "LinkMenuItem",
                 "Latest": false,
@@ -2209,37 +2254,10 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Portfolio",
-                  "Url": null
+                  "Url": "~/portfolio"
                 },
                 "MenuItemsListPart": {
-                  "MenuItems": [
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "3 Column Portfolio",
-                        "Url": "portfolio"
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Single Portfolio Item",
-                        "Url": null
-                      }
-                    }
-                  ]
+                  "MenuItems": []
                 }
               },
               {
@@ -2384,7 +2402,7 @@
           }
         },
         {
-          "ContentItemId": "[js: variables('portfolioContentItemId')]",
+          "ContentItemId": "[js: variables('portfolioContentItemId')]",  
           "ContentItemVersionId": "[js: uuid()]",
           "ContentType": "Portfolio",
           "Latest": true,
@@ -2396,7 +2414,7 @@
           "Author": "admin",
           "Portfolio": {},
           "TitlePart": {
-            "Title": "Porfolio Heading"
+            "Title": "Portfolio"
           },
           "AliasPart": {
             "Alias": "portfolio"
@@ -2438,6 +2456,15 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 0
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project One subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-one",
+            "SetHomepage": false
           }
         },
         {
@@ -2470,6 +2497,15 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 1
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project Two subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-two",
+            "SetHomepage": false
           }
         },
         {
@@ -2503,6 +2539,15 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 2
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project Three subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-three",
+            "SetHomepage": false
           }
         },
         {
@@ -2536,6 +2581,15 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 3
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project Four subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-four",
+            "SetHomepage": false
           }
         },
         {
@@ -2569,6 +2623,15 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 4
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project Five subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-five",
+            "SetHomepage": false
           }
         },
         {
@@ -2602,10 +2665,19 @@
           "ContainedPart": {
             "ListContentItemId": "[js: variables('portfolioContentItemId')]",
             "Order": 5
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Project Six subheading"
+            }
+          },
+          "AutoroutePart": {
+            "Path": "portfolio/project-six",
+            "SetHomepage": false
           }
         },
         {
-          "ContentItemId": "4hb2w9besr2e85m6e1ta3a1jmm",
+          "ContentItemId": "[js: variables('servicesContentItemId')]",
           "ContentItemVersionId": "4wn1acj3tg7f7wbfa6cv14w2cb",
           "ContentType": "Services",
           "Latest": true,
@@ -2961,11 +3033,6 @@
           "CreatedUtc": "2018-09-06T13:43:42.8680747Z",
           "Owner": "admin",
           "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": "Subheading"
-            }
-          },
           "AutoroutePart": {
             "Path": "portfolio",
             "SetHomepage": false
@@ -2985,7 +3052,7 @@
                 "Owner": null,
                 "Author": "admin",
                 "LiquidPart": {
-                  "Liquid": "[file:text('Snippets/Portfolio.html')]"
+                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"] %}\r\n{% assign projects = Queries.PortfolioSummaryQuery | query %}\r\n\r\n<div class=\"row\">\r\n    {% for item in projects %}\r\n    <div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n        <div class=\"card h-100\">\r\n            <a href=\"#\"><img class=\"card-img-top\" src=\"{{ item.Content.Project.Image.Paths[0] | asset_url }}\" alt=\"\"></a>\r\n            <div class=\"card-body\">\r\n              {% a display_for:item %}\r\n                <h4 class=\"card-title\">\r\n                    {{ item.Content.TitlePart.Title }}\r\n                </h4>\r\n              {% enda %}\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n</div>\r\n\r\n"
                 },
                 "FlowMetadata": {
                   "Alignment": 3,
@@ -2996,6 +3063,11 @@
           },
           "TitlePart": {
             "Title": "Portfolio"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Portfolio subheading"
+            }
           }
         },
         {
@@ -3316,11 +3388,6 @@
           "CreatedUtc": "2018-09-10T13:30:13.9039839Z",
           "Owner": "admin",
           "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": "Subheading"
-            }
-          },
           "AutoroutePart": {
             "Path": "services",
             "SetHomepage": false
@@ -3351,6 +3418,11 @@
           },
           "TitlePart": {
             "Title": "Services"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Services subheading"
+            }
           }
         },
         {
@@ -3364,11 +3436,6 @@
           "CreatedUtc": "2018-09-10T10:17:05.7996088Z",
           "Owner": "admin",
           "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": "Subheading"
-            }
-          },
           "AutoroutePart": {
             "Path": "about",
             "SetHomepage": false
@@ -3490,6 +3557,11 @@
           },
           "TitlePart": {
             "Title": "About"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "About subheading"
+            }
           }
         },
         {
@@ -3503,11 +3575,6 @@
           "CreatedUtc": "2018-09-11T10:05:23.3420683Z",
           "Owner": "admin",
           "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": null
-            }
-          },
           "AutoroutePart": {
             "Path": "thankyou",
             "SetHomepage": false
@@ -3540,6 +3607,11 @@
           },
           "TitlePart": {
             "Title": "ThankYou"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Very Much"
+            }
           }
         },
         {
@@ -3553,11 +3625,6 @@
           "CreatedUtc": "2018-09-10T16:53:39.1648868Z",
           "Owner": "admin",
           "Author": "admin",
-          "Page": {
-            "Subtitle": {
-              "Text": "Subheading"
-            }
-          },
           "AutoroutePart": {
             "Path": "contact",
             "SetHomepage": false
@@ -3895,6 +3962,11 @@
           },
           "TitlePart": {
             "Title": "Contact"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Contact subheading"
+            }
           }
         },
         {
@@ -3917,6 +3989,28 @@
             "Layer": "Always",
             "RenderTitle": false
           }
+        },
+        {
+          "ContentItemId": "42dh17qbn2dqgsdz407b2gfxw7",
+          "ContentItemVersionId": "4ndgmb04w2xrx7kgjqrnn2gd59",
+          "ContentType": "LiquidWidget",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-12T08:17:14.6043209Z",
+          "PublishedUtc": "2018-09-12T08:17:14.7391357Z",
+          "CreatedUtc": "2018-09-11T15:23:13.2958814Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "LiquidPart": {
+            "Liquid": "{% assign path = \"slug:\" + Request.Path  %}\r\n{% assign currentItem = Content[path]  %}\r\n\r\n<div class=\"container\">\r\n            <h1 class=\"mt-4 mb-3\">\r\n                {{ currentItem.Content.TitlePart.Title }}\r\n                <small>{{ currentItem.Content.SubtitlePart.Subtitle.Text }}</small>\r\n            </h1>\r\n            <ol class=\"breadcrumb\">\r\n                <li class=\"breadcrumb-item\">\r\n                   <a href=\"{{ \"/\" | href }}\">Home</a>\r\n                </li>\r\n              {% assign breadcrumb = currentItem.Content.AutoroutePart.Path | split: \"/\" %}\r\n              {% assign allItems = breadcrumb | size - 1 %}\r\n              \r\n              {% for i in (0..allItems) %}\r\n              \r\n              \t{% if i == allItems %}\r\n              \r\n              \t\t<li class=\"breadcrumb-item active\">{{ breadcrumb[i] | capitalize }}</li>\r\n              \t{% else %}\r\n              \t\t<li class=\"breadcrumb-item\"><a href=\"{{ \"/\" + breadcrumb[i] | href }}\">{{ breadcrumb[i] | capitalize }}</a></li> \r\n              \t{% endif %}\r\n              \r\n              {% endfor %}\r\n            </ol>\r\n        </div>\r\n<hr />"
+          },
+          "LayerMetadata": {
+            "Title": "PageHeader",
+            "Position": 2.0,
+            "Zone": "Header",
+            "Layer": "NotHomepage",
+            "RenderTitle": false
+          }
         }
       ]
     },
@@ -3932,6 +4026,11 @@
           "Name": "Homepage",
           "Rule": "isHomepage()",
           "Description": "The widgets in this layer are only displayed on the homepage."
+        },
+        {
+          "Name": "NotHomepage",
+          "Rule": "isHomepage() == false",
+          "Description": "Render in all pages except Homepage"
         }
       ]
     },
