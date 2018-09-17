@@ -1206,6 +1206,134 @@
               "Settings": {}
             }
           ]
+        },
+        {
+          "Name": "Pricing",
+          "DisplayName": "Pricing",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Pricing",
+              "Name": "Pricing",
+              "Settings": {
+                "Position": "4"
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "Position": "3",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": null,
+                "PageSize": "10",
+                "ContainedContentTypes": [
+                  "PricePlan"
+                ],
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "1"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "PricePlan",
+          "DisplayName": "PricePlan",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "PricePlan",
+              "Name": "PricePlan",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "DisplayName": "Bag",
+                "Description": "Provides a collection behavior for your content item.",
+                "Editor": null,
+                "ContainedContentTypes": [
+                  "Features"
+                ],
+                "DisplayType": null,
+                "ContentIndexSettings": {},
+                "Position": "1"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Features",
+          "DisplayName": "Features",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Features",
+              "Name": "Features",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -1825,6 +1953,64 @@
             "Description": "Displays a field validation error."
           },
           "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "Page",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "SubtitlePart",
+          "Settings": {
+            "Attachable": "True",
+            "Reusable": "False",
+            "Description": "Provides a subtitle for a content item",
+            "DisplayName": null
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "DisplayName": "Subtitle",
+                "Editor": null,
+                "Hint": "Provides subtitle for content item",
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "0"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "PricePlan",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Price",
+              "Settings": {
+                "DisplayName": "Price",
+                "Editor": null,
+                "Hint": "Price for this plan",
+                "ContentIndexSettings": {
+                  "Included": true,
+                  "Stored": true,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Position": "0"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2172,6 +2358,13 @@
           "ReturnContentItems": true,
           "Name": "CustomersQuery",
           "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"PricePlan\" } \r\n  },\r\n    \"sort\" : { \"PricePlan.Price\" : { \"order\" : \"asc\" }\r\n\t}\r\n}",
+          "ReturnContentItems": true,
+          "Name": "PriceplansQuery",
+          "Source": "Lucene"
         }
       ]
     },
@@ -2392,7 +2585,7 @@
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "Princing Table",
-                        "Url": null
+                        "Url": "/price-plan"
                       }
                     }
                   ]
@@ -2402,7 +2595,7 @@
           }
         },
         {
-          "ContentItemId": "[js: variables('portfolioContentItemId')]",  
+          "ContentItemId": "[js: variables('portfolioContentItemId')]",
           "ContentItemVersionId": "[js: uuid()]",
           "ContentType": "Portfolio",
           "Latest": true,
@@ -3052,7 +3245,7 @@
                 "Owner": null,
                 "Author": "admin",
                 "LiquidPart": {
-                  "Liquid": "{% assign portfolio = Content[\"alias:portfolio\"] %}\r\n{% assign projects = Queries.PortfolioSummaryQuery | query %}\r\n\r\n<div class=\"row\">\r\n    {% for item in projects %}\r\n    <div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n        <div class=\"card h-100\">\r\n            <a href=\"#\"><img class=\"card-img-top\" src=\"{{ item.Content.Project.Image.Paths[0] | asset_url }}\" alt=\"\"></a>\r\n            <div class=\"card-body\">\r\n              {% a display_for:item %}\r\n                <h4 class=\"card-title\">\r\n                    {{ item.Content.TitlePart.Title }}\r\n                </h4>\r\n              {% enda %}\r\n                <p class=\"card-text\">{{ item.Content.HtmlBodyPart.Html | raw }}</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n</div>\r\n\r\n"
+                  "Liquid": "{% assign projects = Queries.PortfolioSummaryQuery | query %}\r\n\r\n<div class=\"row\">\r\n{% for project in projects %}\r\n\t <div class=\"col-lg-4 col-sm-6 portfolio-item\">\r\n          <div class=\"card h-100\">\r\n            {% a display_for:project %}\r\n            <img class=\"card-img-top\" src=\"{{ project.Content.Project.Image.Paths | asset_url }}\" alt=\"\">\r\n            {% enda %}\r\n            <div class=\"card-body\">\r\n              {% a display_for:project %}\r\n              <h4 class=\"card-title\">\r\n                {{ project.Content.TitlePart.Title }}\r\n              </h4>\r\n              {% enda %}\r\n              <p class=\"card-text\">{{ project.Content.HtmlBodyPart.Html }}</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n{% endfor %}\r\n</div>"
                 },
                 "FlowMetadata": {
                   "Alignment": 3,
@@ -4010,6 +4203,548 @@
             "Zone": "Header",
             "Layer": "NotHomepage",
             "RenderTitle": false
+          }
+        },
+        {
+          "ContentItemId": "496vne7hycbz5zaab80yww5ynf",
+          "ContentItemVersionId": "4jyvw7nhg4yw1th4mdcfvxaa54",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:43:27.4760739Z",
+          "PublishedUtc": "2018-09-14T16:43:27.481613Z",
+          "CreatedUtc": "2018-09-14T16:43:27.481613Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Cras justo odio"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4qekbssfy72f1scwk5jz5dkymx",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4cdfz86xb1g7vywv43jq9sz4w5",
+          "ContentItemVersionId": "43331cefjfavw4wgmpf3b2mad8",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:43:39.3062614Z",
+          "PublishedUtc": "2018-09-14T16:43:39.3104065Z",
+          "CreatedUtc": "2018-09-14T16:43:39.3104065Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Dapibus ac facilisis in"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4qekbssfy72f1scwk5jz5dkymx",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "49bjw7a8hwdds4htaygseevtm0",
+          "ContentItemVersionId": "4q7gs21z62yqrwhe8xr4d7tt5a",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:43:51.5458012Z",
+          "PublishedUtc": "2018-09-14T16:43:51.5526691Z",
+          "CreatedUtc": "2018-09-14T16:43:51.5526691Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Vestibulum at eros"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4qekbssfy72f1scwk5jz5dkymx",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4q1err7nf589ywggzfvqady755",
+          "ContentItemVersionId": "4f1hyw268vpcj73354811kxfmp",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:44:35.3152626Z",
+          "PublishedUtc": "2018-09-14T16:44:35.3191015Z",
+          "CreatedUtc": "2018-09-14T16:44:35.3191015Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Cras justo odio"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4jjxmqpch15rmwcpgtct6rhdc3",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "48dckmcswsrar5xzc6ygbtnb5e",
+          "ContentItemVersionId": "48n0hg3tvpfa4x34he4d94jbng",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:44:55.3067041Z",
+          "PublishedUtc": "2018-09-14T16:44:55.3112144Z",
+          "CreatedUtc": "2018-09-14T16:44:55.3112144Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Dapibus ac facilisis in"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4jjxmqpch15rmwcpgtct6rhdc3",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4p7mjkys9m4abvntqrg0hhn1x0",
+          "ContentItemVersionId": "4z1etvj8hwjs024r70hamedjcy",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:45:11.5544589Z",
+          "PublishedUtc": "2018-09-14T16:45:11.5580444Z",
+          "CreatedUtc": "2018-09-14T16:45:11.5580444Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Vestibulum at eros"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4jjxmqpch15rmwcpgtct6rhdc3",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4ccde44jqk2413y089qw03ncmb",
+          "ContentItemVersionId": "49qzq13r2b7vdrsqn9b7fzyqd5",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:45:37.0910739Z",
+          "PublishedUtc": "2018-09-14T16:45:37.0991679Z",
+          "CreatedUtc": "2018-09-14T16:45:37.0991679Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Cras justo odio"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4cvdjnbks07sjtd0jmhb1fqn5f",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "46gqq36x7qch2r9fvya147bfx1",
+          "ContentItemVersionId": "43cpn6f4yv5q82kybvzv6hn950",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:45:49.0917211Z",
+          "PublishedUtc": "2018-09-14T16:45:49.0952943Z",
+          "CreatedUtc": "2018-09-14T16:45:49.0952943Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Dapibus ac facilisis in"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4cvdjnbks07sjtd0jmhb1fqn5f",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4nf6388qb0rmmsh6r1y9ws9847",
+          "ContentItemVersionId": "4y1b5dqbw8cte4z6ms596pvtxv",
+          "ContentType": "Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:45:58.5401256Z",
+          "PublishedUtc": "2018-09-14T16:45:58.5454911Z",
+          "CreatedUtc": "2018-09-14T16:45:58.5454911Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Features": {},
+          "TitlePart": {
+            "Title": "Vestibulum at eros"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4cvdjnbks07sjtd0jmhb1fqn5f",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+          "ContentItemVersionId": "4r6e5r44fsbhtrbdp6fmhphkxq",
+          "ContentType": "Pricing",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T16:46:32.9212922Z",
+          "PublishedUtc": "2018-09-14T16:46:32.9302369Z",
+          "CreatedUtc": "2018-09-14T16:34:39.241972Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Pricing": {},
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Subheading pricing"
+            }
+          },
+          "TitlePart": {
+            "Title": "Pricing"
+          },
+          "AliasPart": {
+            "Alias": "pricing"
+          }
+        },
+        {
+          "ContentItemId": "4cvdjnbks07sjtd0jmhb1fqn5f",
+          "ContentItemVersionId": "4tmm3trnjtvsnyymas87mkdz4n",
+          "ContentType": "PricePlan",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T17:22:10.7045749Z",
+          "PublishedUtc": "2018-09-14T17:22:10.7240989Z",
+          "CreatedUtc": "2018-09-14T16:45:29.9102742Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "PricePlan": {
+            "Price": {
+              "Text": "$159.99"
+            }
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Ultra"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+            "Order": 0
+          },
+          "BagPart": {
+            "ContentItems": [
+              {
+                "Id": 0,
+                "ContentItemId": "4s0j4vh411fdd1tz0dnebh1ccd",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:10.7181985Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "Something"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "440m59re7qx636870txmfhj6x8",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:10.7197264Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "Bla bla"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "4f2s7hrymwjx557dd7ekh15mxx",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:10.7212808Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "foo"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4jjxmqpch15rmwcpgtct6rhdc3",
+          "ContentItemVersionId": "4a03sp6vq03dw73v8w835m6fwp",
+          "ContentType": "PricePlan",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T17:22:29.406972Z",
+          "PublishedUtc": "2018-09-14T17:22:29.4191243Z",
+          "CreatedUtc": "2018-09-14T16:44:27.3145451Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "PricePlan": {
+            "Price": {
+              "Text": "$39.99"
+            }
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Plus"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+            "Order": 0
+          },
+          "BagPart": {
+            "ContentItems": [
+              {
+                "Id": 0,
+                "ContentItemId": "4nqfwj6zkzefh35jg8yy6xfcxy",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:29.4121293Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "wow"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "42gtcfqswcnc829z0bq313bj5k",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:29.4140812Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "amazing"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "4gnckn7vhnky6t14jqrqc4174h",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:22:29.4161238Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "wee"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4qekbssfy72f1scwk5jz5dkymx",
+          "ContentItemVersionId": "4j72cc0j1fe1w2vj8917h8hrx0",
+          "ContentType": "PricePlan",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-14T17:30:38.9627564Z",
+          "PublishedUtc": "2018-09-14T17:30:38.9741722Z",
+          "CreatedUtc": "2018-09-14T16:42:55.2876489Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "PricePlan": {
+            "Price": {
+              "Text": "$19.99"
+            }
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Basic"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+            "Order": 0
+          },
+          "BagPart": {
+            "ContentItems": [
+              {
+                "Id": 0,
+                "ContentItemId": "4haed1cn6fq9c686493v00jbn3",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:30:38.9673719Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "Feature 1"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "4y1k71s9pfaqd0dta8agwhhgcq",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:30:38.9694275Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "Feature 2"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              },
+              {
+                "Id": 0,
+                "ContentItemId": "48hezb5vkxcf4rkrwehmxzxedm",
+                "ContentItemVersionId": null,
+                "ContentType": "Features",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-14T17:30:38.9710097Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "Features": {},
+                "TitlePart": {
+                  "Title": "Feature 3"
+                },
+                "ContainedPart": {
+                  "ListContentItemId": "4tmyvyfpbw9g4wg104551485wa",
+                  "Order": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4s57qf9kfce415g0hgg8qzmy5j",
+          "ContentItemVersionId": "4ktwn61x31cn2047cp19b2dfn3",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T08:41:57.7401945Z",
+          "PublishedUtc": "2018-09-17T08:41:57.944579Z",
+          "CreatedUtc": "2018-09-14T16:47:31.3655577Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "price-plan",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "45vdazyfq52wv768gcv1bvcb4s",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-17T08:41:57.8962923Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign pricing = Content[\"alias:pricing\"] %}\r\n{% assign pricePlans = Queries.PriceplansQuery | query %}\r\n\r\n<div class=\"row\">\r\n{% for plan in pricePlans %}\r\n\t<div class=\"col-lg-4 mb-4\">\r\n          <div class=\"card h-100\">\r\n            <h3 class=\"card-header\">{{ plan.Content.TitlePart.Title }}</h3>\r\n            <div class=\"card-body\">\r\n              <div class=\"display-4\">{{ plan.Content.PricePlan.Price.Text }}</div>\r\n              <div class=\"font-italic\">per month</div>\r\n            </div>\r\n            <ul class=\"list-group list-group-flush\">\r\n              {% for feature in plan.Content.BagPart.ContentItems %}\r\n              \t<li class=\"list-group-item\">{{ feature.TitlePart.Title }}</li>\r\n          \t  {% endfor %}\t\r\n              <li class=\"list-group-item\">\r\n                <a href=\"#\" class=\"btn btn-primary\">Sign Up!</a>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n{% endfor %}\r\n</div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "Price Plan"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Monthly offerings"
+            }
           }
         }
       ]

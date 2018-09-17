@@ -1,0 +1,10 @@
+﻿<div class="row">
+    {% for item in Model.ContentItems %}
+    {{ item | shape_build_display: "Summary" | shape_render }}
+    {% endfor %}
+</div>
+
+{{Model.Pager | shape_type}}
+
+
+{{ Model.Pager | shape_render }}

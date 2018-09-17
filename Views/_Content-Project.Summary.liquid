@@ -1,0 +1,13 @@
+﻿<div class="col-lg-4 col-md-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="{{ Model.ContentItem.Content.Project.Image.Paths[0] | asset_url }}" alt=""></a>
+        <div class="card-body">
+            {% a display_for:Model.ContentItem %}
+            <h4 class="card-title">
+                {{ Model.ContentItem.Content.TitlePart.Title }}
+            </h4>
+            {% enda %}
+            <p class="card-text">{{ Model.ContentItem.Content.HtmlBodyPart.Html | raw }}</p>
+        </div>
+    </div>
+</div>
