@@ -6,11 +6,11 @@
     <div class="col-lg-8">
         <!-- Preview Image -->
         <img class="img-fluid rounded" src="{{ Model.ContentItem.Content.BlogPost.Image.Paths | asset_url }}" alt="">
-
+        
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on January 1, 2017 at 12:00 PM</p>
+        <p>Posted on {{ Model.ContentItem.CreatedUtc | date: "%b %d, %y %H:%M" }}</p>
 
         <hr>
 
