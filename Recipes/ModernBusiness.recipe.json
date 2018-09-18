@@ -1334,6 +1334,98 @@
               }
             }
           ]
+        },
+        {
+          "Name": "FAQ",
+          "DisplayName": "FAQ",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FAQ",
+              "Name": "FAQ",
+              "Settings": {
+                "Position": "4"
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "Position": "3",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": null,
+                "PageSize": "10",
+                "ContainedContentTypes": [
+                  "QuestionAnswer"
+                ],
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "2"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "QuestionAnswer",
+          "DisplayName": "Question/Answer",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "QuestionAnswer",
+              "Name": "QuestionAnswer",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -1431,10 +1523,23 @@
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
             {
-              "FieldName": "TextField",
-              "Name": "Subtitle",
+              "FieldName": "MediaField",
+              "Name": "Image",
               "Settings": {
-                "DisplayName": "Subtitle"
+                "DisplayName": "Image",
+                "Editor": null,
+                "ContentIndexSettings": {
+                  "Included": true,
+                  "Stored": true,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "Hint": null,
+                "Required": false,
+                "Multiple": false,
+                "Position": "0"
               }
             }
           ]
@@ -2012,6 +2117,7 @@
             }
           ]
         }
+
       ]
     },
     {
@@ -2365,6 +2471,20 @@
           "ReturnContentItems": true,
           "Name": "PriceplansQuery",
           "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"BlogPost\" } \r\n  },\r\n  \"sort\": { \"Content.ContentItem.CreatedUtc\": { \"order\": \"desc\" } }\r\n}",
+          "ReturnContentItems": true,
+          "Name": "BlogPostQuery",
+          "Source": "Lucene"
+        },
+        {
+          "Index": "Search",
+          "Template": "{\r\n  \"query\": {\r\n    \"term\" : { \"Content.ContentItem.ContentType\" : \"QuestionAnswer\" } \r\n  },\r\n  \"sort\": { \"Content.ContentItem.CreatedUtc\": { \"order\": \"asc\" } }\r\n}",
+          "ReturnContentItems": true,
+          "Name": "QueryFAQ",
+          "Source": "Lucene"
         }
       ]
     },
@@ -2463,50 +2583,7 @@
                 "Author": "admin",
                 "LinkMenuItemPart": {
                   "Name": "Blog",
-                  "Url": null
-                },
-                "MenuItemsListPart": {
-                  "MenuItems": [
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Blog Home 1",
-                        "Url": null
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Blog Home 2",
-                        "Url": null
-                      }
-                    },
-                    {
-                      "Id": 0,
-                      "ContentItemId": "[js: uuid()]",
-                      "ContentItemVersionId": null,
-                      "ContentType": "LinkMenuItem",
-                      "Latest": false,
-                      "Published": false,
-                      "Author": "admin",
-                      "LinkMenuItemPart": {
-                        "Name": "Blog Post",
-                        "Url": null
-                      }
-                    }
-                  ]
+                  "Url": "~/blog"
                 }
               },
               {
@@ -2559,7 +2636,7 @@
                       "Author": "admin",
                       "LinkMenuItemPart": {
                         "Name": "FAQ",
-                        "Url": null
+                        "Url": "./faq"
                       }
                     },
                     {
@@ -4745,6 +4822,407 @@
             "Subtitle": {
               "Text": "Monthly offerings"
             }
+          }
+        },
+        {
+          "ContentItemId": "4ed6m7w2kn0147nxbyerj33m53",
+          "ContentItemVersionId": "4z9k5bt8r7zzp4bvsk0z0aptxc",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T15:56:57.3469328Z",
+          "PublishedUtc": "2018-09-17T15:56:57.3557733Z",
+          "CreatedUtc": "2018-09-17T10:51:48.427374Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "blog",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "440ecm1t7recwznwnchamahjn2",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-17T15:56:57.3517665Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "\r\n{% assign blogposts = Queries.BlogPostQuery | query %}\r\n\r\n{% for post in blogposts %}\r\n\t<div class=\"card mb-4\">\r\n        <div class=\"card-body\">\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-6\">\r\n              <a href=\"#\">\r\n                <img class=\"img-fluid rounded\" src=\"{{ post.Content.BlogPost.Image.Paths | asset_url }}\" alt=\"\">\r\n              </a>\r\n            </div>\r\n            <div class=\"col-lg-6\">\r\n              {% a display_for:post %}\r\n              <h2 class=\"card-title\">{{ post.Content.TitlePart.Title }}</h2>\r\n              {% enda %}\r\n              <p class=\"card-text\">{{ post.Content.MarkdownBodyPart.Markdown | markdownify | truncatewords: 30 |raw }}</p>\r\n              \r\n              <a href=\"#\" class=\"btn btn-primary\">Read More &rarr;</a>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"card-footer text-muted\">\r\n          Posted on {{ metadata.Content.ContentItem.PublishedUtc | date: \"%b %d, %y\" }} by {{ metadata.Content.ContentItem.Author }}\r\n        </div>\r\n      </div>\r\n{% endfor %}"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "BlogPage"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "Blog Subheading"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4tncgpgvs9xfeyy4qtcgh8tbmp",
+          "ContentItemVersionId": "4g359aehhs3gjrv9913bnyrzdn",
+          "ContentType": "QuestionAnswer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-18T08:59:08.1490725Z",
+          "PublishedUtc": "2018-09-18T08:59:08.1549112Z",
+          "CreatedUtc": "2018-09-18T08:59:08.1549112Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "QuestionAnswer": {},
+          "HtmlBodyPart": {
+            "Html": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. "
+          },
+          "TitlePart": {
+            "Title": "Collapsible Group Item #1"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tk05bd0jydgn6bdew8q0gqwwk",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4ye1tnz8dtmy0w7n71xcmztp40",
+          "ContentItemVersionId": "47t7ztsxjm159t3c93fwmnz3n4",
+          "ContentType": "QuestionAnswer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-18T08:59:39.2726019Z",
+          "PublishedUtc": "2018-09-18T08:59:39.2771402Z",
+          "CreatedUtc": "2018-09-18T08:59:39.2771402Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "QuestionAnswer": {},
+          "HtmlBodyPart": {
+            "Html": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. "
+          },
+          "TitlePart": {
+            "Title": "Collapsible Group Item #2"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tk05bd0jydgn6bdew8q0gqwwk",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4s00g66mzmysq5dvvs19p3r3wb",
+          "ContentItemVersionId": "4ta49kabsbctysm2dkmntctedg",
+          "ContentType": "QuestionAnswer",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-18T09:00:11.2422292Z",
+          "PublishedUtc": "2018-09-18T09:00:11.2461309Z",
+          "CreatedUtc": "2018-09-18T09:00:11.2461309Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "QuestionAnswer": {},
+          "HtmlBodyPart": {
+            "Html": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. "
+          },
+          "TitlePart": {
+            "Title": "Collapsible Group Item #3"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4tk05bd0jydgn6bdew8q0gqwwk",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4tk05bd0jydgn6bdew8q0gqwwk",
+          "ContentItemVersionId": "4s3z6njphq2bq20ad0f5jx2tcf",
+          "ContentType": "FAQ",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-18T09:43:27.3542248Z",
+          "PublishedUtc": "2018-09-18T09:43:27.3596888Z",
+          "CreatedUtc": "2018-09-18T08:58:45.8124279Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "FAQ": {},
+          "AutoroutePart": {
+            "Path": null,
+            "SetHomepage": false
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "FAQ-List"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "FAQ Subheading"
+            }
+          },
+          "AliasPart": {
+            "Alias": "faq"
+          }
+        },
+        {
+          "ContentItemId": "447mzy07n4ddq6bshr568kcfn8",
+          "ContentItemVersionId": "4cz2pd9e7g7evxreydxqnhdkxc",
+          "ContentType": "Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-18T10:38:45.6516458Z",
+          "PublishedUtc": "2018-09-18T10:38:45.6608533Z",
+          "CreatedUtc": "2018-09-18T09:04:07.9024489Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "faq",
+            "SetHomepage": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "Id": 0,
+                "ContentItemId": "4kwp6xr65da2fy74xh5aw3wpw8",
+                "ContentItemVersionId": null,
+                "ContentType": "LiquidWidget",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2018-09-18T10:38:45.6573694Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LiquidPart": {
+                  "Liquid": "{% assign faq = Queries.QueryFAQ | query %}\r\n{% assign num = 1 %}\r\n{% assign class = \"\" %}\r\n<div class=\"mb-4\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\r\n{% for question in faq %}\r\n\t\t<div class=\"card\">\r\n          <div class=\"card-header\" role=\"tab\" id=\"heading{{ num }}\">\r\n            <h5 class=\"mb-0\">\r\n              <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{ num }}\" aria-controls=\"collapse{{ class }}\">{{ question.Content.TitlePart.Title }}</a>\r\n            </h5>\r\n          </div>\r\n          <div id=\"collapse{{ num }}\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"heading{{ num }}\">\r\n            <div class=\"card-body\">\r\n             {{ question.Content.HtmlBodyPart.Html }}\r\n            </div>\r\n          </div>\r\n        </div>\r\n  {% assign num = num + 1 %}\r\n{% endfor %}\r\n</div>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "TitlePart": {
+            "Title": "FAQ"
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": "FAQ Subheading"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4hsnm1tbkt1vpsstvxx4cz45cc",
+          "ContentItemVersionId": "4gyjydvcdv2xhzn5bn6gh3785r",
+          "ContentType": "Blog",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T10:55:06.6858578Z",
+          "PublishedUtc": "2018-09-17T10:55:06.6940161Z",
+          "CreatedUtc": "2018-09-17T10:33:34.1961902Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "Blog": {},
+          "AutoroutePart": {
+            "Path": "blog-home",
+            "SetHomepage": false
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "TitlePart": {
+            "Title": "Blog"
+          },
+          "HtmlBodyPart": {
+            "Html": null
+          },
+          "AliasPart": {
+            "Alias": "blog"
+          }
+        },
+        {
+          "ContentItemId": "4frbxe000hzwm7bb723dek70cq",
+          "ContentItemVersionId": "42zqbkhsnm5g3yb6bd890h7gn9",
+          "ContentType": "BlogPost",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T15:23:21.9378291Z",
+          "PublishedUtc": "2018-09-17T15:23:21.9511556Z",
+          "CreatedUtc": "2018-09-17T10:56:17.1147918Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "BlogPost": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "AutoroutePart": {
+            "Path": "blog/blog-title-4",
+            "SetHomepage": false
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!\r\n\r\n> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.\r\n> Someone famous in *Source Title*\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!"
+          },
+          "TitlePart": {
+            "Title": "Blog title 4"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4hsnm1tbkt1vpsstvxx4cz45cc",
+            "Order": 0
+          },
+          "ImagePart": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>\r\n\r\n          <blockquote class=\"blockquote\">\r\n            <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n            <footer class=\"blockquote-footer\">Someone famous in\r\n              <cite title=\"Source Title\">Source Title</cite>\r\n            </footer>\r\n          </blockquote>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>\r\n\r\n          <hr>"
+          }
+        },
+        {
+          "ContentItemId": "4kzf0zb4gpzsg47436kbm5x2w7",
+          "ContentItemVersionId": "4fja6bf5qaz932nqf8g521xrm7",
+          "ContentType": "BlogPost",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T15:23:27.2649049Z",
+          "PublishedUtc": "2018-09-17T15:23:27.2715775Z",
+          "CreatedUtc": "2018-09-17T10:55:56.1309674Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "BlogPost": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "AutoroutePart": {
+            "Path": "blog/blog-title-3",
+            "SetHomepage": false
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!\r\n\r\n> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.\r\n> Someone famous in *Source Title*\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!"
+          },
+          "TitlePart": {
+            "Title": "Blog title 3"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4hsnm1tbkt1vpsstvxx4cz45cc",
+            "Order": 0
+          },
+          "ImagePart": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>\r\n\r\n          <blockquote class=\"blockquote\">\r\n            <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n            <footer class=\"blockquote-footer\">Someone famous in\r\n              <cite title=\"Source Title\">Source Title</cite>\r\n            </footer>\r\n          </blockquote>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>\r\n\r\n          <hr>"
+          }
+        },
+        {
+          "ContentItemId": "49q7na4wmgeggxeebaw7thencc",
+          "ContentItemVersionId": "4a88s17w1xc28xsmv66bfn41w9",
+          "ContentType": "BlogPost",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T15:23:32.377658Z",
+          "PublishedUtc": "2018-09-17T15:23:32.3843635Z",
+          "CreatedUtc": "2018-09-17T10:54:30.109778Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "BlogPost": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "AutoroutePart": {
+            "Path": "blog/post-title-2",
+            "SetHomepage": false
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!\r\n\r\n> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.\r\n> Someone famous in *Source Title*\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!"
+          },
+          "TitlePart": {
+            "Title": "Post title 2"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4hsnm1tbkt1vpsstvxx4cz45cc",
+            "Order": 0
+          },
+          "ImagePart": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>\r\n\r\n          <blockquote class=\"blockquote\">\r\n            <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n            <footer class=\"blockquote-footer\">Someone famous in\r\n              <cite title=\"Source Title\">Source Title</cite>\r\n            </footer>\r\n          </blockquote>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>\r\n\r\n          <hr>"
+          }
+        },
+        {
+          "ContentItemId": "4jc1t9975mfqa3evsegxqk4jdr",
+          "ContentItemVersionId": "4884zr0dbh0s92exx20g7vw4xk",
+          "ContentType": "BlogPost",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-17T15:23:36.9503632Z",
+          "PublishedUtc": "2018-09-17T15:23:36.9568801Z",
+          "CreatedUtc": "2018-09-17T10:38:00.9949333Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "BlogPost": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "AutoroutePart": {
+            "Path": "blog/post-title",
+            "SetHomepage": false
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!\r\n\r\n> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.\r\n> Someone famous in *Source Title*\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!"
+          },
+          "TitlePart": {
+            "Title": "Post Title"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4hsnm1tbkt1vpsstvxx4cz45cc",
+            "Order": 0
+          },
+          "ImagePart": {
+            "Image": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>\r\n\r\n          <blockquote class=\"blockquote\">\r\n            <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n            <footer class=\"blockquote-footer\">Someone famous in\r\n              <cite title=\"Source Title\">Source Title</cite>\r\n            </footer>\r\n          </blockquote>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>\r\n\r\n          <hr>"
           }
         }
       ]

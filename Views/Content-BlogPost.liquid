@@ -1,0 +1,48 @@
+﻿{% assign pageUrl = Request.Path %}
+{% assign pageId = Model.ContentItem.ContainedPart.ListContentItemId %}
+ 
+<div class="row">
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="{{ Model.ContentItem.Content.BlogPost.Image.Paths | asset_url }}" alt="">
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on January 1, 2017 at 12:00 PM</p>
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">{{ Model.ContentItem.Content.MarkdownBodyPart.Markdown | markdownify | raw }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <hr>
+
+        <div id="disqus_thread"></div>
+    </div>
+</div>
+
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = pageUrl;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = pageId; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://localhost-8ffz20hmlk.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
