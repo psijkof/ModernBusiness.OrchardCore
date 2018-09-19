@@ -1022,6 +1022,34 @@
           ]
         },
         {
+          "Name": "Customer",
+          "DisplayName": "Customer",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Customer",
+              "Name": "Customer",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "1"
+              }
+            }
+          ]
+        },
+        {
           "Name": "Form",
           "DisplayName": "Form",
           "Settings": {
