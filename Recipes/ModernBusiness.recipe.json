@@ -1454,6 +1454,108 @@
               }
             }
           ]
+        },
+        {
+          "Name": "RawContent",
+          "DisplayName": "RawContent",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RawContent",
+              "Name": "RawContent",
+              "Settings": {
+                "Position": "3"
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "Position": "4",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": "Wysiwyg",
+                "HtmlBodyPartSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "Position": "5",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": "Wysiwyg",
+                "ContentIndexSettings": {},
+                "MarkdownBodyPartSettings": {}
+              }
+            },
+            {
+              "PartName": "SubtitlePart",
+              "Name": "SubtitlePart",
+              "Settings": {
+                "Position": "1"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ExtraContent",
+          "DisplayName": "ExtraContent",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ExtraContent",
+              "Name": "ExtraContent",
+              "Settings": {
+                "Position": "0"
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "DisplayName": null,
+                "Description": null,
+                "Editor": null,
+                "PageSize": "10",
+                "ContainedContentTypes": [
+                  "RawContent"
+                ],
+                "ContentIndexSettings": {},
+                "Position": "1"
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -3172,6 +3274,7 @@
           "ContentItemId": "[js: uuid()]",
           "ContentItemVersionId": "[js: uuid()]",
           "ContentType": "Page",
+          "DisplayText": "Homepage",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-04T17:20:27.6692441Z",
@@ -3315,15 +3418,13 @@
                 }
               }
             ]
-          },
-          "TitlePart": {
-            "Title": "Homepage"
           }
         },
         {
           "ContentItemId": "4aez1zvje0ap127czq6860nfmw",
           "ContentItemVersionId": "49k9smkdkh1e043w1kdk8ap64j",
           "ContentType": "Page",
+          "DisplayText": "Portfolio",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-07T09:49:22.8620224Z",
@@ -3358,9 +3459,6 @@
                 }
               }
             ]
-          },
-          "TitlePart": {
-            "Title": "Portfolio"
           },
           "SubtitlePart": {
             "Subtitle": {
@@ -3679,6 +3777,7 @@
           "ContentItemId": "4wjp8x3p8nbxgtrew6cv0zthwy",
           "ContentItemVersionId": "4yrg31h5ejmbnzvfpnvd2tsaxg",
           "ContentType": "Page",
+          "DisplayText": "Services",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-10T16:17:25.9745491Z",
@@ -3714,9 +3813,6 @@
               }
             ]
           },
-          "TitlePart": {
-            "Title": "Services"
-          },
           "SubtitlePart": {
             "Subtitle": {
               "Text": "Services subheading"
@@ -3727,6 +3823,7 @@
           "ContentItemId": "4w845p44nx4yeryf9rwf3wj94g",
           "ContentItemVersionId": "4qb27akee5ffhr5nmemmjk9hnw",
           "ContentType": "Page",
+          "DisplayText": "About",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-10T14:21:34.8296401Z",
@@ -3853,9 +3950,6 @@
               }
             ]
           },
-          "TitlePart": {
-            "Title": "About"
-          },
           "SubtitlePart": {
             "Subtitle": {
               "Text": "About subheading"
@@ -3866,6 +3960,7 @@
           "ContentItemId": "4a2wwz3ah2vey5d2mf538z89n2",
           "ContentItemVersionId": "4tbjyfsqv0d3q2cmbykx54rdcj",
           "ContentType": "Page",
+          "DisplayText": "Thanks",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-11T10:05:42.3667359Z",
@@ -3903,9 +3998,6 @@
               }
             ]
           },
-          "TitlePart": {
-            "Title": "ThankYou"
-          },
           "SubtitlePart": {
             "Subtitle": {
               "Text": "Very Much"
@@ -3916,6 +4008,7 @@
           "ContentItemId": "4x1q8gdjwhg2f1xgrq36sevkd4",
           "ContentItemVersionId": "4dybc01qbg8j64agbvs98mdk4y",
           "ContentType": "Page",
+          "DisplayText": "Contact",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-11T10:16:58.7237883Z",
@@ -3976,6 +4069,7 @@
                       "ContentItemId": "489hqrmmqh04y3e71krt8ky2wm",
                       "ContentItemVersionId": null,
                       "ContentType": "Label",
+                      "DisplayText": "Full Name:",
                       "Latest": false,
                       "Published": false,
                       "ModifiedUtc": "2018-09-11T10:16:58.7356922Z",
@@ -3983,9 +4077,6 @@
                       "CreatedUtc": null,
                       "Owner": null,
                       "Author": "admin",
-                      "TitlePart": {
-                        "Title": "Full Name:"
-                      },
                       "FormElementPart": {
                         "Id": "lblName"
                       },
@@ -4030,6 +4121,7 @@
                       "ContentItemId": "4ea17ff0y97jr41pa2mjymxvmf",
                       "ContentItemVersionId": null,
                       "ContentType": "Label",
+                      "DisplayText": "Phone Number:",
                       "Latest": false,
                       "Published": false,
                       "ModifiedUtc": "2018-09-11T10:16:58.7392787Z",
@@ -4037,9 +4129,6 @@
                       "CreatedUtc": null,
                       "Owner": null,
                       "Author": "admin",
-                      "TitlePart": {
-                        "Title": "Phone Number:"
-                      },
                       "FormElementPart": {
                         "Id": "lblPhone"
                       },
@@ -4084,6 +4173,7 @@
                       "ContentItemId": "456s2svp9gwpm6fxr6hyjhe4dj",
                       "ContentItemVersionId": null,
                       "ContentType": "Label",
+                      "DisplayText": "Email Address:",
                       "Latest": false,
                       "Published": false,
                       "ModifiedUtc": "2018-09-11T10:16:58.7430673Z",
@@ -4091,9 +4181,6 @@
                       "CreatedUtc": null,
                       "Owner": null,
                       "Author": "admin",
-                      "TitlePart": {
-                        "Title": "Email Address:"
-                      },
                       "FormElementPart": {
                         "Id": "lblEmail"
                       },
@@ -4138,6 +4225,7 @@
                       "ContentItemId": "4qayvje00wrdptgxgq4tr4n5c8",
                       "ContentItemVersionId": null,
                       "ContentType": "Label",
+                      "DisplayText": "Message:",
                       "Latest": false,
                       "Published": false,
                       "ModifiedUtc": "2018-09-11T10:16:58.7483495Z",
@@ -4145,9 +4233,6 @@
                       "CreatedUtc": null,
                       "Owner": null,
                       "Author": "admin",
-                      "TitlePart": {
-                        "Title": "Message:"
-                      },
                       "FormElementPart": {
                         "Id": "lblMessage"
                       },
@@ -4257,9 +4342,6 @@
                 }
               }
             ]
-          },
-          "TitlePart": {
-            "Title": "Contact"
           },
           "SubtitlePart": {
             "Subtitle": {
@@ -4807,6 +4889,7 @@
           "ContentItemId": "4s57qf9kfce415g0hgg8qzmy5j",
           "ContentItemVersionId": "4ktwn61x31cn2047cp19b2dfn3",
           "ContentType": "Page",
+          "DisplayText": "Prices",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-17T08:41:57.7401945Z",
@@ -4843,9 +4926,6 @@
               }
             ]
           },
-          "TitlePart": {
-            "Title": "Price Plan"
-          },
           "SubtitlePart": {
             "Subtitle": {
               "Text": "Monthly offerings"
@@ -4856,6 +4936,7 @@
           "ContentItemId": "4ed6m7w2kn0147nxbyerj33m53",
           "ContentItemVersionId": "4z9k5bt8r7zzp4bvsk0z0aptxc",
           "ContentType": "Page",
+          "DisplayText": "Blog",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-17T15:56:57.3469328Z",
@@ -4891,9 +4972,6 @@
                 }
               }
             ]
-          },
-          "TitlePart": {
-            "Title": "BlogPage"
           },
           "SubtitlePart": {
             "Subtitle": {
@@ -5006,6 +5084,7 @@
           "ContentItemId": "447mzy07n4ddq6bshr568kcfn8",
           "ContentItemVersionId": "4cz2pd9e7g7evxreydxqnhdkxc",
           "ContentType": "Page",
+          "DisplayText": "FAQ",
           "Latest": true,
           "Published": true,
           "ModifiedUtc": "2018-09-18T10:38:45.6516458Z",
@@ -5041,9 +5120,6 @@
                 }
               }
             ]
-          },
-          "TitlePart": {
-            "Title": "FAQ"
           },
           "SubtitlePart": {
             "Subtitle": {
@@ -5251,6 +5327,65 @@
           },
           "HtmlBodyPart": {
             "Html": "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>\r\n\r\n          <blockquote class=\"blockquote\">\r\n            <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n            <footer class=\"blockquote-footer\">Someone famous in\r\n              <cite title=\"Source Title\">Source Title</cite>\r\n            </footer>\r\n          </blockquote>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>\r\n\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>\r\n\r\n          <hr>"
+          }
+        },
+        {
+          "ContentItemId": "4ndyhp3h9a5ka161rr5zyvd7nz",
+          "ContentItemVersionId": "4s32sfj4nrcqr2sg4kr39q9rma",
+          "ContentType": "ExtraContent",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-25T10:38:43.5336232Z",
+          "PublishedUtc": "2018-09-25T10:38:43.5551344Z",
+          "CreatedUtc": "2018-09-25T10:38:43.5551344Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "ExtraContent": {},
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          }
+        },
+        {
+          "ContentItemId": "4cqpx622d23ra40x96bf30jrd2",
+          "ContentItemVersionId": "4g6j421nzzbsa03mppm0yyjs4z",
+          "ContentType": "RawContent",
+          "DisplayText": "Modern Business Features",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2018-09-25T10:41:30.1215513Z",
+          "PublishedUtc": "2018-09-25T10:41:30.1276229Z",
+          "CreatedUtc": "2018-09-25T10:41:30.1276229Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "RawContent": {
+            "Images": {
+              "Paths": [
+                "700x400.png"
+              ]
+            }
+          },
+          "AliasPart": {
+            "Alias": "welcome"
+          },
+          "HtmlBodyPart": {
+            "Html": "<p>The Modern Business template by Start Bootstrap includes:</p>\r\n\r\n\r\n\r\n                <ul>\r\n\r\n\r\n\r\n                    <li>\r\n\r\n\r\n\r\n                        <strong>Bootstrap v4</strong>\r\n\r\n\r\n\r\n                    </li>\r\n\r\n\r\n\r\n                    <li>jQuery</li>\r\n\r\n\r\n\r\n                    <li>Font Awesome</li>\r\n\r\n\r\n\r\n                    <li>Working contact form with validation</li>\r\n\r\n\r\n\r\n                    <li>Unstyled page elements for easy customization</li>\r\n\r\n\r\n\r\n                </ul>\r\n\r\n\r\n\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>\r\n\r\n\r\n\r\n"
+          },
+          "MarkdownBodyPart": {
+            "Markdown": null
+          },
+          "SubtitlePart": {
+            "Subtitle": {
+              "Text": null
+            }
+          },
+          "TitlePart": {
+            "Title": "Modern Business Features"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "4ndyhp3h9a5ka161rr5zyvd7nz",
+            "Order": 0
           }
         }
       ]

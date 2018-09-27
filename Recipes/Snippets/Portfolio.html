@@ -7,11 +7,15 @@
     {% for item in projects %}
     <div class="col-lg-4 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ item.Content.Project.Image.Paths[0] | asset_url }}" alt=""></a>
+            {% a display_for:item %}
+            <img class="card-img-top" src="{{ item.Content.Project.Image.Paths[0] | asset_url }}" alt="">
+            {% enda %}
             <div class="card-body">
+                {% a display_for:item %}
                 <h4 class="card-title">
-                    <a href="#">{{ item.Content.TitlePart.Title }}</a>
+                    {{ item.Content.TitlePart.Title }}
                 </h4>
+                {% enda %}
                 <p class="card-text">{{ item.Content.HtmlBodyPart.Html | raw }}</p>
             </div>
         </div>
